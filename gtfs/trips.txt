@@ -1,575 +1,493 @@
-"route_id","service_id","trip_id","trip_headsign","direction_id","shape_id"
-"1","fullday","1.001","Blok M - Kota",0,"shp_1_001"
-"1","fullday","1.002","Kota - Blok M",1,"shp_1_002"
-"1","fullday","1.404","Bundaran Senayan - Kota",0,"shp_1_404"
-"1","fullday","1.008","Kota - Bundaran Senayan",1,"shp_1_008"
-"1","fullday","1.502","Harmoni - Kota",0,"shp_1_502"
-"1","fullday","1.006","Kota - Harmoni",1,"shp_1_006"
-"1","fullday","1.009","Blok M - Harmoni",0,"shp_1_009"
-"1","fullday","1.501","Harmoni - Blok M",1,"shp_1_501"
-"1","fullday","1.205A","Blok M - Tosari",0,"shp_1_205A"
-"1","fullday","1.205B","Tosari - Blok M",1,"shp_1_205B"
-"1","fullday","1.012B","Monas - Kota",0,"shp_1_012B"
-"1","fullday","1.012","Kota - Monas",1,"shp_1_012"
-"1","fullday","1.402","Bundaran Senayan - Blok M",1,"shp_1_402"
-"1","fullday","a1-b","Blok M - Kota via Jl. Pattimura",0,"shp_a1-b"
-"1","fullday","a1-c","Blok M - Harmoni via Jl. Pattimura",0,"shp_a1-c"
-"1","fullday","a1-d","Blok M - Tosari via Jl. Pattimura",0,"shp_a1-d"
-"1","fullday","1.014","Kota - Dukuh Atas 2",1,"shp_1_014"
-"1","fullday","1.327","Harmoni - Bundaran Senayan",1,"shp_1_327"
-"1","fullday","1.327B","Bundaran Senayan - Harmoni",0,"shp_1_327B"
-"1","fullday","1.214B","Bundaran HI - Kota",0,"shp_1_214B"
-"1","fullday","1.214A","Kota - Bundaran HI",1,"shp_1_214A"
-"1","fullday","1.207","Blok M - Monas",0,"shp_1_207"
-"1","fullday","1.216","Monas - Blok M",1,"shp_1_216"
-"1","fullday","1.209B","Blok M - Bank Indonesia",0,"shp_1_209B"
-"1","fullday","1.209A","Bank Indonesia - Blok M",1,"shp_1_209A"
-"1A","fullday","N4.001","PIK - Balai Kota",0,"shp_N4_001"
-"1A","fullday","N4.002","Balai Kota - PIK",1,"shp_N4_002"
-"1A","fullday","1.A201A","PIK - Harmoni",0,"shp_1_A201A"
-"1A","fullday","1.A201B","Harmoni - PIK",1,"shp_1_A201B"
-"1A","fullday","1.A305","PIK - Kota",0,"shp_1_A305"
-"1A","fullday","1.A006","Kota - PIK",1,"shp_1_A006"
-"1A","fullday","1.A205A","PIK - Penjaringan",0,"shp_1_A205A"
-"1A","fullday","1.A205B","Penjaringan - PIK",1,"shp_1_A205B"
-"1A","fullday","1.A311","Landmark Pluit Auto Plaza - Balai Kota",0,"shp_1_A311"
-"1A","fullday","1.A204B","Kota - Monas",0,"shp_1_A204B"
-"1A","fullday","1.A204A","Monas - Kota",1,"shp_1_A204A"
-"1A","fullday","1.A206B","Penjaringan - Balai Kota",0,"shp_1_A206B"
-"1A","fullday","1.A206A","Balai Kota - Penjaringan",1,"shp_1_A206A"
-"1A","fullday","1.A210B","Kota - Balai Kota",0,"shp_1_A210B"
-"1A","fullday","1.A210A","Balai Kota - Kota",1,"shp_1_A210A"
-"1A","fullday","1.A316B","Penjaringan - Monas",0,"shp_1_A316B"
-"1A","fullday","1.A316A","Monas - Penjaringan",1,"shp_1_A316A"
-"1B","weekday","N27.001","Stasiun Palmerah - Tosari",0,"shp_N27_001"
-"1B","weekday","N27.002","Tosari - Stasiun Palmerah",1,"shp_N27_002"
-"1C","fullday","A0","Blok M - Bintaro via Pesanggrahan",0,"shp_A0"
-"1C","fullday","A1","Bintaro - Blok M via Pesanggrahan",1,"shp_A1"
-"1E","fullday","a-b","Pondok Labu - Blok M",0,"shp_a-b"
-"1E","fullday","b-a","Blok M - Pondok Labu",1,"shp_b-a"
-"1E","fullday","c-b","Fatmawati - Blok M",0,"shp_c-b"
-"1E","fullday","b-c","Blok M - Fatmawati",1,"shp_b-c"
-"1F","weekday","1F.001","Stasiun Palmerah - Bundaran Senayan",0,"shp_1F_001"
-"1F","weekday","1F.002","Bundaran Senayan - Stasiun Palmerah",1,"shp_1F_002"
-"1F","weekday","1F.003","Stasiun Palmerah - Bundaran Senayan via Jl. Asia Afrika",0,"shp_1F_003"
-"1H","weekday","a-b","Stasiun Tanah Abang - Stasiun Gondangdia - Stasiun Tanah Abang",0,"shp_a-b"
-"1M","fullday","a-b","Meruya - Blok M",0,"shp_a-b"
-"1M","fullday","b-a","Blok M - Meruya",1,"shp_b-a"
-"1N","weekday","a-b","Tanah Abang - Blok M",0,"shp_a-b"
-"1N","weekday","b-a","Blok M - Tanah Abang",1,"shp_b-a"
-"1N","weekday","a-c","Tanah Abang - Bundaran Senayan",0,"shp_a-c"
-"1N","weekday","c-a","Bundaran Senayan - Tanah Abang",1,"shp_c-a"
-"1N","weekday","d-b","Bundaran HI - Blok M",0,"shp_d-b"
-"1N","weekday","b-d","Blok M - Bundaran HI",1,"shp_b-d"
-"1P","weekday","a-b","Senen - Bundaran Senayan",0,"shp_a-b"
-"1P","weekday","b-a","Bundaran Senayan - Senen",1,"shp_b-a"
-"S23",,"a-b","Blok M - Rempoa",0,"shp_a-b"
-"S23",,"b-a","Rempoa - Blok M",1,"shp_b-a"
-"1R","weekday","a-b","Senen - Stasiun Tanah Abang",0,"shp_a-b"
-"1R","weekday","b-a","Stasiun Tanah Abang - Senen",1,"shp_b-a"
-"1R","weekday","a1-b","Stasiun Pasar Senen - Stasiun Tanah Abang via Jl Kwini",0,"shp_a1-b"
-"1R","weekday","a-c","Stasiun Pasar Senen - Jatibaru",0,"shp_a-c"
-"1R","weekday","c-a","Jatibaru - Stasiun Pasar Senen",1,"shp_c-a"
-"2","fullday","2.001","Pulo Gadung - Harmoni",0,"shp_2_001"
-"2","fullday","2.002","Harmoni - Pulo Gadung",1,"shp_2_002"
-"2","fullday","2.0011","Pulo Gadung - Harmoni via Gambir",0,"shp_2_0011"
-"2","fullday","2.001A","Pulo Gadung - Harmoni via Gunung Sahari",0,"shp_2_001A"
-"2","fullday","2.002B","Harmoni - Pulo Gadung via Gunung Sahari",1,"shp_2_002B"
-"2","fullday","2.003","Pulo Gadung - ASMI",0,"shp_2_003"
-"2","fullday","2.023","ASMI - Pulo Gadung",1,"shp_2_023"
-"2","fullday","2.022","ASMI - Harmoni",0,"shp_2_022"
-"2","fullday","2.004","Harmoni - ASMI",1,"shp_2_004"
-"2","fullday","2.204B","Bermis - Harmoni",0,"shp_2_204B"
-"2","fullday","2.204A","Harmoni - Bermis",1,"shp_2_204A"
-"2F","fullday","N5.004","Rusun Cakung Barat (Albo) - Pulo Gadung",0,"shp_N5_004"
-"2F","fullday","N5.003","Pulo Gadung - Rusun Cakung Barat (Albo)",1,"shp_N5_003"
-"TR1",,"a-b","Gondangdia - Senen - Gondangdia",0,"shp_a-b"
-"TR2",,"a-b","Gondangdia - Balai Kota - Gondangdia",0,"shp_a-b"
-"3","fullday","3.002","Kalideres - Pasar Baru",0,"shp_3_002"
-"3","fullday","3.001","Pasar Baru - Kalideres",1,"shp_3_001"
-"3","fullday","3.012","Kalideres - Juanda",0,"shp_3_012"
-"3","fullday","3.013","Juanda - Kalideres",1,"shp_3_013"
-"3","fullday","3.005B","Kalideres - Harmoni",0,"shp_3_005B"
-"3","fullday","3.005","Harmoni - Kalideres",1,"shp_3_005"
-"3","fullday","3.021","Rawa Buaya - Harmoni",0,"shp_3_021"
-"3","fullday","3.003","Harmoni - Rawa Buaya",1,"shp_3_003"
-"3","fullday","3.022","Rawabuaya - Kalideres",1,"shp_3_022"
-"3","fullday","3.102B","Grogol - Pasar Baru",0,"shp_3_102B"
-"3","fullday","3.101A","Pasar Baru - Grogol",1,"shp_3_101A"
-"3","fullday","3.102A","Kalideres - Indosiar",0,"shp_3_102A"
-"3","fullday","3.101B","Indosiar - Kalideres",1,"shp_3_101B"
-"3","fullday","3.203A","Harmoni - Pesakih",1,"shp_3_203A"
-"3","fullday","3.203B","Pesakih - Harmoni",0,"shp_3_203B"
-"3","fullday","3.202B","Kalideres - Sumber Waras",0,"shp_3_202B"
-"3","fullday","3.202A","Sumber Waras - Kalideres",1,"shp_3_202A"
-"3","fullday","3.307","Harmoni - Pasar Baru",0,"shp_3_307"
-"3A","fullday","N8.001","Rusun Pesakih - Kalideres",0,"shp_N8_001"
-"3A","fullday","N8.002","Kalideres - Rusun Pesakih",1,"shp_N8_002"
-"3E","fullday","a-b","Sentraland Cengkareng - Puri Kembangan",0,"shp_a-b"
-"3E","fullday","b-a","Puri Kembangan - Sentraland Cengkareng",1,"shp_b-a"
-"3E","fullday","a-c","Sentraland Cengkareng - Rawa Buaya",0,"shp_a-c"
-"3E","fullday","c-a","Rawa Buaya - Sentraland Cengkareng",1,"shp_c-a"
-"3E","fullday","c-b","Rawa Buaya - Puri Kembangan",0,"shp_c-b"
-"3E","fullday","b-c","Puri Kembangan - Rawa Buaya",1,"shp_b-c"
-"3F","weekday","a-b","Kalideres - Gelora Bung Karno",0,"shp_a-b"
-"3F","weekday","b-a","Gelora Bung Karno - Kalideres",1,"shp_b-a"
-"4","fullday","4.002","Pulo Gadung - Tosari",0,"shp_4_002"
-"4","fullday","4.001","Tosari - Pulo Gadung",1,"shp_4_001"
-"4","fullday","4.020","TU GAS - Tosari",0,"shp_4_020"
-"4","fullday","4.003","Tosari - TU GAS",1,"shp_4_003"
-"4","fullday","4.004","Pulo Gadung - Matraman 2",0,"shp_4_004"
-"4","fullday","4.202B","Matraman - Pulo Gadung",1,"shp_4_202B"
-"4","fullday","4.006","Pulo Gadung - TU GAS",0,"shp_4_006"
-"4","fullday","4.021","TU GAS - Pulo Gadung",1,"shp_4_021"
-"4","fullday","4.226A","TU GAS - Matraman",0,"shp_4_226A"
-"4","fullday","4.226B","Matraman - TU GAS",1,"shp_4_226B"
-"4","fullday","4.310","Pulo Gadung - Tosari via Bermis",0,"shp_4_310"
-"4","fullday","4.005","Tosari - Pulo Gadung via Bermis",1,"shp_4_005"
-"4","fullday","4.228","TU GAS - Manggarai",0,"shp_4_228"
-"4","fullday","4.007","Manggarai - TU GAS",1,"shp_4_007"
-"4B","weekday","N16.001","Stasiun Manggarai - Universitas Indonesia",0,"shp_N16_001"
-"4B","weekday","N16.004","Universitas Indonesia - Stasiun Manggarai",1,"shp_N16_004"
-"4B","weekday","N16.002","Universitas Indonesia - Stasiun Manggarai via Kampus UI",1,"shp_N16_002"
-"4B","weekday","4B.003","Stasiun Manggarai - Pasar Minggu",0,"shp_4B_003"
-"4B","weekday","4B.004","Pasar Minggu - Stasiun Manggarai",1,"shp_4B_004"
-"4C","weekday","A0","Bundaran Senayan - TU GAS",0,"shp_A0"
-"4C","weekday","A1","TU GAS - Bundaran Senayan",1,"shp_A1"
-"4C","weekday","B0","Bundaran Senayan - Jl. Proklamasi",0,"shp_B0"
-"4C","weekday","B1","Jl. Proklamasi - Bundaran Senayan",1,"shp_B1"
-"4D","weekday","b-d","Pulo Gadung - Patra Kuningan",0,"shp_b-d"
-"4D","weekday","d-b","Patra Kuningan - Pulo Gadung",1,"shp_d-b"
-"4D","weekday","b-c","Pulo Gadung - Departemen Kesehatan",0,"shp_b-c"
-"4D","weekday","c-b","Departemen Kesehatan - Pulo Gadung",1,"shp_c-b"
-"4D","weekday","A0","TU GAS - Patra Kuningan",0,"shp_A0"
-"4D","weekday","A1","Patra Kuningan - TU GAS",1,"shp_A1"
-"4D","weekday","a-c","TU GAS - Departemen Kesehatan",0,"shp_a-c"
-"4D","weekday","c-a","Departemen Kesehatan - TU GAS",1,"shp_c-a"
-"4F","fullday","a-b1","Pulo Gadung - Pinang Ranti",0,"shp_a-b1"
-"4F","fullday","b1-a","Pinang Ranti - Pulo Gadung",1,"shp_b1-a"
-"4F","fullday","a-b","Pulo Gadung - Pondok Gede",0,"shp_a-b"
-"4F","fullday","b-a","Pondok Gede - Pulo Gadung",1,"shp_b-a"
-"4F","fullday","b-b1","Pondok Gede - Pinang Ranti",0,"shp_b-b1"
-"4F","fullday","b1-b","Pinang Ranti - Pondok Gede",1,"shp_b1-b"
-"5","fullday","5.001","Ancol - Kampung Melayu",0,"shp_5_001"
-"5","fullday","5.002","Kampung Melayu - Ancol",1,"shp_5_002"
-"5","fullday","5.202B","Senen - Kampung Melayu",0,"shp_5_202B"
-"5","fullday","5.004","Kampung Melayu - Senen",1,"shp_5_004"
-"5","fullday","5.201A","Ancol - Kebon Pala",0,"shp_5_201A"
-"5","fullday","5.201B","Kebon Pala - Ancol",1,"shp_5_201B"
-"5","fullday","5.103","Pademangan - Kampung Melayu",0,"shp_5_103"
-"5","fullday","5.005","Ancol - Kampung Melayu via Flyover Senen",0,"shp_5_005"
-"5","fullday","5.006","Kampung Melayu - Ancol via Flyover Senen",1,"shp_5_006"
-"5B","weekday","A0","Stasiun Tebet - Kebon Pala - Bidara Cina - Stasiun Tebet",0,"shp_A0"
-"5B","weekday","B0","Stasiun Tebet - Bidara Cina - Stasiun Tebet",0,"shp_B0"
-"5C","fullday","7.031","PGC - Harmoni",0,"shp_7_031"
-"5C","fullday","7.030","Harmoni - PGC",1,"shp_7_030"
-"5C","fullday","7.031A","PGC - Harmoni via Sawah Besar",0,"shp_7_031A"
-"5C","fullday","c-b","Kampung Melayu - Harmoni",0,"shp_c-b"
-"5C","fullday","b-c","Harmoni - Kampung Melayu",1,"shp_b-c"
-"5C","fullday","5.C033","Harmoni - Cawang UKI",1,"shp_5_C033"
-"5D","fullday","7.033","PGC - Ancol",0,"shp_7_033"
-"5D","fullday","5.003","Ancol - PGC",1,"shp_5_003"
-"5D","fullday","7.033A","PGC - Ancol via Senen Central",0,"shp_7_033A"
-"5D","fullday","5.D201A","PGC - Senen Central",0,"shp_5_D201A"
-"5D","fullday","5.D201B","Senen Central - PGC",1,"shp_5_D201B"
-"5F","fullday","a-b","Kampung Melayu - Tanah Abang",0,"shp_a-b"
-"5F","fullday","b-a","Tanah Abang - Kampung Melayu",1,"shp_b-a"
-"5M","fullday","a-c","Kampung Melayu - Stasiun Tanah Abang via Cikini",0,"shp_a-c"
-"5M","fullday","c-a","Stasiun Tanah Abang - Kampung Melayu via Cikini",1,"shp_c-a"
-"5M","fullday","a-b","Kampung Melayu - Tanah Abang via Cikini",0,"shp_a-b"
-"5M","fullday","b-a","Tanah Abang - Kampung Melayu via Cikini",1,"shp_b-a"
-"6","fullday","6.203A","Ragunan - Halimun",0,"shp_6_203A"
-"6","fullday","6.203B","Halimun - Ragunan",1,"shp_6_203B"
-"6","fullday","6.003","Ragunan - Tosari",0,"shp_6_003"
-"6","fullday","6.004","Tosari - Ragunan",1,"shp_6_004"
-"6","fullday","6.001","Ragunan - Dukuh Atas",0,"shp_6_001"
-"6","fullday","6.002","Dukuh Atas - Ragunan",1,"shp_6_002"
-"6","fullday","6.201A","Ragunan - Setiabudi Utara AINI",0,"shp_6_201A"
-"6","fullday","6.201B","Setiabudi Utara AINI - Ragunan",1,"shp_6_201B"
-"6","fullday","a-b","SMK 57 - Dukuh Atas",0,"shp_a-b"
-"6","fullday","b-a","Dukuh Atas - SMK 57",1,"shp_b-a"
-"6","fullday","6.202A","Departemen Kesehatan - Dukuh Atas",0,"shp_6_202A"
-"6","fullday","6.202B","Dukuh Atas - Departemen Kesehatan",1,"shp_6_202B"
-"6","fullday","6.204B","Kuningan Timur - Dukuh Atas",0,"shp_6_204B"
-"6","fullday","6.102","Dukuh Atas - Kuningan Timur",1,"shp_6_102"
-"6","fullday","6.207A","Ragunan - SMK 57",0,"shp_6_207A"
-"6","fullday","6.207B","SMK 57 - Ragunan",1,"shp_6_207B"
-"6A","fullday","6A.003","Ragunan - Monas via Kuningan",0,"shp_6A_003"
-"6A","fullday","6.600","Monas - Ragunan via Kuningan",1,"shp_6_600"
-"6A","fullday","a-b","SMK 57 - Monas via Kuningan",0,"shp_a-b"
-"6A","fullday","b-a","Monas - SMK 57 via Kuningan",1,"shp_b-a"
-"6A","fullday","c-b","Departemen Kesehatan - Monas",0,"shp_c-b"
-"6A","fullday","b-c","Monas - Departemen Kesehatan",1,"shp_b-c"
-"6A","fullday","d-b","Dukuh Atas - Monas",0,"shp_d-b"
-"6A","fullday","b-d","Monas - Dukuh Atas",1,"shp_b-d"
-"6A","fullday","6.206B","Kuningan Timur - Monas",0,"shp_6_206B"
-"6A","fullday","6.206A","Monas - Kuningan Timur",1,"shp_6_206A"
-"6A","fullday","6A.005","Ragunan - Tosari via Kuningan",0,"shp_6A_005"
-"6A","fullday","6.A006","Tosari - Ragunan via Kuningan",1,"shp_6_A006"
-"6B","fullday","6.005","Ragunan - Monas via Semanggi",0,"shp_6_005"
-"6B","weekday","6.601","Monas - Ragunan via Semanggi",1,"shp_6_601"
-"6B","fullday","a-b","SMK 57 - Monas via Semanggi",0,"shp_a-b"
-"6B","weekday","b-a","Monas - SMK 57 via Semanggi",1,"shp_b-a"
-"6B","fullday","6.B203","Ragunan - Tosari via Semanggi",0,"shp_6_B203"
-"6B","weekday","6.B220","Tosari - Ragunan via Semanggi",1,"shp_6_B220"
-"6C","fullday","A0","Stasiun Tebet - Patra Kuningan - Karet - Stasiun Tebet",0,"shp_A0"
-"6C","fullday","B0","Stasiun Tebet - Patra Kuningan - Stasiun Tebet",0,"shp_B0"
-"6D","fullday","N21.001","Stasiun Tebet - Karet - Stasiun Tebet",0,"shp_N21_001"
-"6D","fullday","N21.001A","Stasiun Tebet - Lotte - Stasiun Tebet",0,"shp_N21_001A"
-"6H","weekday","8.003","Lebak Bulus - Senen",0,"shp_8_003"
-"6H","weekday","N15.002","Senen - Lebak Bulus",1,"shp_N15_002"
-"6H","weekday","N15.003A","Lebak Bulus - Setiabudi Utara AINI",0,"shp_N15_003A"
-"6H","weekday","N15.003B","Setiabudi Utara AINI - Lebak Bulus",1,"shp_N15_003B"
-"6H","weekday","c-d","Departemen Kesehatan - Senen",0,"shp_c-d"
-"6H","weekday","d-c","Senen - Departemen Kesehatan",1,"shp_d-c"
-"6M","weekday","A0","Stasiun Manggarai - Blok M",0,"shp_A0"
-"6M","weekday","N26.017","Blok M - Stasiun Manggarai",1,"shp_N26_017"
-"6M","weekday","B0","Stasiun Manggarai - Kuningan Timur",0,"shp_B0"
-"6M","weekday","B1","Kuningan Timur - Stasiun Manggarai",1,"shp_B1"
-"6M","weekday","C0","Stasiun Manggarai - Semanggi",0,"shp_C0"
-"6M","weekday","C1","Semanggi - Stasiun Manggarai",1,"shp_C1"
-"6M","weekday","N26.017A","Blok M - Stasiun Manggarai via Jl. Pattimura",1,"shp_N26_017A"
-"6N","fullday","6N.001","Ragunan - Blok M",0,"shp_6N_001"
-"6N","fullday","6N.002","Blok M - Ragunan",1,"shp_6N_002"
-"6R","weekday","a-b","Ragunan - Stasiun MRT Fatmawati - Ragunan",0,"shp_a-b"
-"7","fullday","7.001","Kampung Rambutan - Kampung Melayu",0,"shp_7_001"
-"7","fullday","7.002","Kampung Melayu - Kampung Rambutan",1,"shp_7_002"
-"7","fullday","7.004","Kampung Melayu - Kampung Rambutan via Tol TMII",1,"shp_7_004"
-"7","fullday","7.008","Kampung Melayu - Kampung Rambutan via Jl. Dewi Sartika",1,"shp_7_008"
-"7A","fullday","a1-b1","Lebak Bulus - Kampung Rambutan",0,"shp_a1-b1"
-"7A","fullday","b1-a1","Kampung Rambutan - Lebak Bulus",1,"shp_b1-a1"
-"7A","fullday","8.009","Lebak Bulus - Kampung Rambutan via Tol Jl. Ampera",0,"shp_8_009"
-"7A","fullday","7.015","Kampung Rambutan - Lebak Bulus via Tol Jl. Ampera",1,"shp_7_015"
-"7A","fullday","b2-a2","Kampung Rambutan - Lebak Bulus via Tol Jl. Raya Bogor",1,"shp_b2-a2"
-"7A","fullday","7A.006","Lebak Bulus - Kampung Rambutan via Tol Jl. Fatmawati",0,"shp_7A_006"
-"7A","fullday","7A.202A","Lebak Bulus - Tanjung Barat",0,"shp_7A_202A"
-"7A","fullday","7A.202B","Kampung Rambutan - Lebak Bulus",1,"shp_7A_202B"
-"7A","fullday","7A.201A","Fatmawati - Kampung Rambutan",0,"shp_7A_201A"
-"7A","fullday","7A.201B","Kampung Rambutan - Fatmawati",1,"shp_7A_201B"
-"7B","fullday","N29.001","Kampung Rambutan - Blok M",0,"shp_N29_001"
-"7B","fullday","N29.002","Blok M - Kampung Rambutan",1,"shp_N29_002"
-"7B","fullday","a-b","PGC - Blok M",0,"shp_a-b"
-"7B","fullday","b-a","Blok M - PGC",1,"shp_b-a"
-"7B","fullday","N29.003","Kampung Rambutan - Blok M via Warung Jati",0,"shp_N29_003"
-"7B","fullday","c-d","PGC - Kampung Rambutan",1,"shp_c-d"
-"7C","weekday","A0","Cibubur - BKN",0,"shp_A0"
-"7C","weekday","A1","BKN - Cibubur",1,"shp_A1"
-"7C","weekday","B1","BKN - Pinang Ranti",1,"shp_B1"
-"7C","weekday","B0","Cibubur - BKN",0,"shp_B0"
-"7D","fullday","b1-a","TMII - Cawang Cikoko",0,"shp_b1-a"
-"7D","fullday","a-b","Cawang Cikoko - TMII",1,"shp_a-b"
-"7D","fullday","B0","TMII - Cawang UKI",0,"shp_B0"
-"7P","weekday","a-b","Pondok Kelapa - BKN",0,"shp_a-b"
-"7P","weekday","b-a","BKN - Pondok Kelapa",1,"shp_b-a"
-"8","fullday","8.001","Lebak Bulus - Harmoni",0,"shp_8_001"
-"8","fullday","8.002","Harmoni - Lebak Bulus",1,"shp_8_002"
-"8","fullday","8.005","Lebak Bulus - Harmoni via Tomang",0,"shp_8_005"
-"8","fullday","8.004","Harmoni - Lebak Bulus via Tomang",1,"shp_8_004"
-"8","fullday","8.201A","Lebak Bulus - Indosiar",0,"shp_8_201A"
-"8","fullday","8.201B","Indosiar - Lebak Bulus",1,"shp_8_201B"
-"8","fullday","8.202B","Pasar Kebayoran Lama - Harmoni",0,"shp_8_202B"
-"8","fullday","8.202A","Harmoni - Pasar Kebayoran Lama",1,"shp_8_202A"
-"8","fullday","8.101","Pondok Indah 2 - Harmoni",0,"shp_8_101"
-"8","fullday","8.102","Harmoni - Pondok Indah 2",1,"shp_8_102"
-"8A","fullday","8A.008","Harmoni - Grogol",0,"shp_8A_008"
-"8A","fullday","8A.002","Grogol - Harmoni",1,"shp_8A_002"
-"8A","fullday","8.006","Harmoni - Roxy - Grogol - Harmoni",0,"shp_8_006"
-"8D","fullday","A0","Blok M - Joglo",0,"shp_A0"
-"8D","fullday","A1","Joglo - Blok M",1,"shp_A1"
-"8E","fullday","a-b","Blok M - Bintaro",0,"shp_a-b"
-"8E","fullday","b-a","Bintaro - Blok M",1,"shp_b-a"
-"8E","fullday","a-c","Blok M - Bintaro Kodam",0,"shp_a-c"
-"8E","fullday","c-a","Bintaro Kodam - Blok M",1,"shp_c-a"
-"8K","fullday","a-b","Tanah Abang - Batusari",0,"shp_a-b"
-"8K","weekday","b-a","Batusari - Tanah Abang",1,"shp_b-a"
-"8K","fullday","a-c","Tanah Abang - Grogol",0,"shp_a-c"
-"8K","weekday","c-a","Grogol - Tanah Abang",1,"shp_c-a"
-"8K","fullday","c-b","Grogol - Batusari",0,"shp_c-b"
-"8K","weekday","b-c","Batusari - Grogol",1,"shp_b-c"
-"9","fullday","9.001","Pinang Ranti - Pluit",0,"shp_9_001"
-"9","fullday","9.007","Pinang Ranti - Pluit via Tol Dalam Kota",0,"shp_9_007"
-"9","fullday","9.002","Pluit - Pinang Ranti",1,"shp_9_002"
-"9","fullday","9.005","Pinang Ranti - Grogol",0,"shp_9_005"
-"9","fullday","9.014","Grogol - Pinang Ranti",1,"shp_9_014"
-"9","fullday","9.203A","Pinang Ranti - Kuningan Barat",0,"shp_9_203A"
-"9","fullday","9.203B","Kuningan Barat - Pinang Ranti",1,"shp_9_203B"
-"9","fullday","9.204B","Tomang - Pluit",0,"shp_9_204B"
-"9","fullday","9.204A","Pluit - Tomang",1,"shp_9_204A"
-"9","fullday","9.207A","Pinang Ranti - Slipi Petamburan",0,"shp_9_207A"
-"9","fullday","9.207B","Slipi Petamburan - Pinang Ranti",1,"shp_9_207B"
-"9","fullday","9.205A","Pinang Ranti - BNN",0,"shp_9_205A"
-"9","fullday","9.205B","BNN - Pinang Ranti",1,"shp_9_205B"
-"9","fullday","9.209A","Pinang Ranti - Harapan Kita",0,"shp_9_209A"
-"9","fullday","9.209B","Harapan Kita - Pinang Ranti",1,"shp_9_209B"
-"9","fullday","9.003","Pinang Ranti - PGC 2 - Grogol",0,"shp_9_003"
-"9","fullday","9.015","PGC 2 - BNN - Pinang Ranti",1,"shp_9_015"
-"9","fullday","9.016","Grogol - Pluit",0,"shp_9_016"
-"9","fullday","9.008","Pluit - Grogol",1,"shp_9_008"
-"9","fullday","9.202","Pluit - Penjaringan",1,"shp_9_202"
-"9","fullday","9.206B","Cawang UKI - Pluit",0,"shp_9_206B"
-"9","fullday","9.206A","Pluit - Cawang UKI",1,"shp_9_206A"
-"9D","weekday","a-b","Pasar Minggu - Tanah Abang",0,"shp_a-b"
-"9D","weekday","b-a","Tanah Abang - Pasar Minggu",1,"shp_b-a"
-"9D","weekday","c-b","Bundaran HI - Tanah Abang",0,"shp_c-b"
-"9D","weekday","b-c","Tanah Abang - Bundaran HI",1,"shp_b-c"
-"9D","weekday","a-c","Pasar Minggu - Bundaran HI",0,"shp_a-c"
-"9D","weekday","c-a","Bundaran HI - Pasar Minggu",1,"shp_c-a"
-"9D","weekday","a-d","Pasar Minggu - Semanggi",0,"shp_a-d"
-"9D","weekday","d-a","Semanggi - Pasar Minggu",1,"shp_d-a"
-"9E","weekday","9E.005","Kebayoran Lama - Jelambar",0,"shp_9E_005"
-"9E","weekday","9E.010","Jelambar - Kebayoran Lama",1,"shp_9E_010"
-"9E","weekday","N22.201A","Kebayoran Lama - Grogol",0,"shp_N22_201A"
-"9E","weekday","N22.201B","Grogol - Kebayoran Lama",1,"shp_N22_201B"
-"9E","weekday","9E.003","Kebayoran Lama - RS Harapan Kita",0,"shp_9E_003"
-"9E","weekday","9E.004","RS Harapan Kita - Kebayoran Lama",1,"shp_9E_004"
-"9H","weekday","a-b","Cipedak - Blok M",0,"shp_a-b"
-"9H","weekday","b-a","Blok M - Cipedak",1,"shp_b-a"
-"9H","weekday","c-b","Setu Babakan - Blok M",0,"shp_c-b"
-"9H","weekday","b-c","Blok M - Setu Babakan",1,"shp_b-c"
-"10","fullday","10.002","Tanjung Priok - PGC 2",0,"shp_10_002"
-"10","fullday","10.001","PGC 2 - Tanjung Priok",1,"shp_10_001"
-"10","fullday","10.203B","Walikota Jakarta Utara - PGC 2",0,"shp_10_203B"
-"10","fullday","10.203A","PGC 2 - Walikota Jakarta Utara",1,"shp_10_203A"
-"10","fullday","10.201B","Sunter Kelapa Gading - PGC 2",0,"shp_10_201B"
-"10","fullday","10.003","PGC 2 - Sunter Kelapa Gading",1,"shp_10_003"
-"10","fullday","10.200A","Tanjung Priok - Penas Kalimalang",0,"shp_10_200A"
-"10","fullday","10.200B","Penas Kalimalang - Tanjung Priok",1,"shp_10_200B"
-"10","fullday","10.207B","Pemuda Pramuka - PGC 2",0,"shp_10_207B"
-"10","fullday","10.207A","PGC 2 - Pemuda Pramuka",1,"shp_10_207A"
-"10A","fullday","N7.001","Rusun Marunda - Tanjung Priok",0,"shp_N7_001"
-"10A","fullday","10A.002","Tanjung Priok - Rusun Marunda",1,"shp_10A_002"
-"10B","fullday","N6.002","Rusun Cipinang Besar Selatan - Penas Kalimalang - Rusun Cipinang Besar Selatan",0,"shp_N6_002"
-"10D","weekday","a-b","Tanjung Priok - Kampung Rambutan",0,"shp_a-b"
-"10D","weekday","b-a","Kampung Rambutan - Tanjung Priok",1,"shp_b-a"
-"10K","fullday","a-b","Tanjung Priok - Senen via Taman BMW",0,"shp_a-b"
-"10K","fullday","b-a","Senen - Tanjung Priok via Taman BMW",1,"shp_b-a"
-"11","fullday","11.004","Kampung Melayu - Pulo Gebang",0,"shp_11_004"
-"11","fullday","11.00111","Pulo Gebang - Kampung Melayu",1,"shp_11_00111"
-"11","fullday","11.002","Kampung Melayu - Walikota Jakarta Timur",0,"shp_11_002"
-"11","fullday","11.001","Walikota Jakarta Timur - Kampung Melayu",1,"shp_11_001"
-"11","fullday","11.003","Walikota Jakarta Timur - Pulo Gebang",0,"shp_11_003"
-"11B","fullday","N5.002","Rusun Rawa Bebek - Penggilingan",0,"shp_N5_002"
-"11B","fullday","N5.001","Rusun Rawa Bebek - Penggilingan",1,"shp_N5_001"
-"11C","fullday","N11.002","Rusun Pinus Elok - Rusun Pulo Gebang",0,"shp_N11_002"
-"11C","fullday","N11.001","Rusun Pulo Gebang - Rusun Pinus Elok",1,"shp_N11_001"
-"11D","fullday","11D.004","Pulo Gadung - Pulo Gebang",0,"shp_11D_004"
-"11D","fullday","11D.003","Pulo Gebang - Pulo Gadung",1,"shp_11D_003"
-"11J",,"11A.002","Rusun Komarudin - Penggilingan",0,"shp_11A_002"
-"11J",,"11A.001","Penggilingan - Rusun Komarudin",1,"shp_11A_001"
-"11K","fullday","a-b","Rusun Rawa Bebek - Bukit Duri",0,"shp_a-b"
-"11K","fullday","b-a","Bukit Duri - Rusun Rawa Bebek",1,"shp_b-a"
-"11Q","fullday","a-b","Pulo Gebang - Kampung Melayu via BKT",0,"shp_a-b"
-"11Q","fullday","b-a","Kampung Melayu - Pulo Gebang via BKT",1,"shp_b-a"
-"11Q","fullday","a-c","Pulo Gebang - Tebet via BKT",0,"shp_a-c"
-"11Q","fullday","c-a","Tebet - Pulo Gebang via BKT",1,"shp_c-a"
-"12","fullday","12.204A","Penjaringan - Sunter Kelapa Gading",0,"shp_12_204A"
-"12","fullday","12.204B","Sunter Kelapa Gading - Penjaringan",1,"shp_12_204B"
-"12","fullday","12.001","Tanjung Priok - Penjaringan",0,"shp_12_001"
-"12","fullday","12.002","Penjaringan - Tanjung Priok",1,"shp_12_002"
-"12","fullday","12.003","Tanjung Priok - Pluit",0,"shp_12_003"
-"12","fullday","12.702","Pluit - Tanjung Priok",1,"shp_12_702"
-"12","fullday","12.601","Tanjung Priok - Kota",0,"shp_12_601"
-"12","fullday","1.602","Kota - Tanjung Priok",1,"shp_1_602"
-"12","fullday","12.311","Sunter Kelapa Gading - Kota",0,"shp_12_311"
-"12","fullday","12.004","Kota - Sunter Kelapa Gading",1,"shp_12_004"
-"12","fullday","12.208B","Mangga Dua - Penjaringan",0,"shp_12_208B"
-"12","fullday","12.208A","Penjaringan - Mangga Dua",1,"shp_12_208A"
-"12","fullday","1.600","Kota - Penjaringan",0,"shp_1_600"
-"12","fullday","12.600","Penjaringan - Kota",1,"shp_12_600"
-"12B","fullday","N9.004","Pluit - Senen",0,"shp_N9_004"
-"12B","fullday","A1","Senen - Pluit",1,"shp_A1"
-"12B","fullday","12.B003","Kota - Senen",0,"shp_12_B003"
-"12B","fullday","12.B004","Senen - Kota",1,"shp_12_B004"
-"12B","fullday","12.B202A","Pluit - Kota",0,"shp_12_B202A"
-"12B","fullday","12.B202B","Kota - Pluit",1,"shp_12_B202B"
-"12F","fullday","N7.001","Rusun Marunda - Rusun Waduk Pluit",0,"shp_N7_001"
-"12F","fullday","10A.002","Rusun Waduk Pluit - Rusun Marunda",1,"shp_10A_002"
-"13","fullday","a-b","Tendean - CBD Ciledug",0,"shp_a-b"
-"13","fullday","b-a","CBD Ciledug - Tendean",1,"shp_b-a"
-"13","fullday","a-c","Tendean - Puri Beta",0,"shp_a-c"
-"13","fullday","c-a","Puri Beta - Tendean",1,"shp_c-a"
-"13","fullday","b-c","CBD Ciledug - Puri Beta",1,"shp_b-c"
-"13","fullday","c-b","Puri Beta - CBD Ciledug",0,"shp_c-b"
-"13","fullday","c-d","Puri Beta - Tirtayasa",1,"shp_c-d"
-"13","fullday","c-e","Puri Beta - JORR",1,"shp_c-e"
-"13A","fullday","a-d","Blok M - Puri Beta",0,"shp_a-d"
-"13A","fullday","d-a","Puri Beta - Blok M",1,"shp_d-a"
-"13A","fullday","a-b","Blok M - CBD Ciledug",0,"shp_a-b"
-"13A","fullday","b-a","CBD Ciledug - Blok M",1,"shp_b-a"
-"13A","fullday","a-c","Blok M - Tendean",0,"shp_a-c"
-"13A","fullday","c-a","Tendean - Blok M",1,"shp_c-a"
-"13C","weekday","a-b","Tosari - Puri Beta",0,"shp_a-b"
-"13C","weekday","b-a","Puri Beta - Tosari",1,"shp_b-a"
-"13C","weekday","a-c","Tosari - Rawa Barat",0,"shp_a-c"
-"13C","weekday","c-a","Rawa Barat - Tosari",1,"shp_c-a"
-"13D","weekend","a-b","Ragunan - Puri Beta",0,"shp_a-b"
-"13D","weekend","b-a","Puri Beta - Ragunan",1,"shp_b-a"
-"13D","weekend","a-c","Ragunan - Ciledug CBD",0,"shp_a-c"
-"13D","weekend","c-a","Ciledug CBD - Ragunan",1,"shp_c-a"
-"13E","weekday","a-b","Kuningan - Puri Beta",0,"shp_a-b"
-"13E","weekday","b-a","Puri Beta - Kuningan",1,"shp_b-a"
-"13E","weekday","a-c","Kuningan - Rawa Barat",0,"shp_a-c"
-"13E","weekday","c-a","Rawa Barat - Kuningan",1,"shp_c-a"
-"GR4","fullday","GR4.001","Taman Kota Intan - Museum Bahari - Taman Kota Intan",0,"shp_GR4_001"
-"GR5","fullday","GR5.001","Kota Tua Explorer",0,"shp_GR5_001"
-"JAK-1",,"a-b","Tanjung Priok - Plumpang",0,"shp_a-b"
-"JAK-1",,"b-a","Plumpang - Tanjung Priok",1,"shp_b-a"
-"OK-2",,"a-b","Kampung Melayu - Duren Sawit",0,"shp_a-b"
-"OK-2",,"b-a","Duren Sawit - Kampung Melayu",1,"shp_b-a"
-"OK-3",,"b-a","Pondok Labu - Lebak Bulus",0,"shp_b-a"
-"OK-3",,"a-b","Lebak Bulus - Pondok Labu",1,"shp_a-b"
-"OK-4",,"a-b","Grogol - Tubagus Angke",0,"shp_a-b"
-"OK-4",,"b-a","Tubagus Angke - Grogol",1,"shp_b-a"
-"OK-5",,"a-b","Semper - Rorotan",0,"shp_a-b"
-"OK-5",,"b-a","Rorotan - Semper",1,"shp_b-a"
-"OK-6",,"a-b","Kampung Rambutan - Pondok Gede",0,"shp_a-b"
-"OK-6",,"b-a","Pondok Gede - Kampung Rambutan",1,"shp_b-a"
-"JAK-7",,"b-a","Tanah Abang - Grogol",0,"shp_b-a"
-"JAK-7",,"a-b","Grogol - Tanah Abang",1,"shp_a-b"
-"JAK-8",,"a-b","Roxy - Bendungan Hilir via Tanah Abang",0,"shp_a-b"
-"JAK.09",,"a-b","Roxy Mas - Karet",0,"shp_a-b"
-"JAK-10",,"a-b","Tanah Abang - Kota",0,"shp_a-b"
-"JAK-10",,"b-a","Kota - Tanah Abang",1,"shp_b-a"
-"JAK-10",,"a-b1","Tanah Abang - Kota via Asemka",0,"shp_a-b1"
-"JAK.10A",,"a-b","Gondangdia - Cikini via Salemba",0,"shp_a-b"
-"JAK.10A",,"b-a","Cikini - Gondangdia via Salemba",1,"shp_b-a"
-"JAK.10B",,"a-b","Gondangdia - Cikini via Kramat",0,"shp_a-b"
-"JAK.10B",,"b-a","Cikini - Gondangdia via Kramat",1,"shp_b-a"
-"JAK-11",,"a-b","Tanah Abang - Kebayoran Lama",0,"shp_a-b"
-"JAK-11",,"b-a","Kebayoran Lama - Tanah Abang",1,"shp_b-a"
-"JAK.112",,"a-b","Pulo Gadung - Tanah Merah",0,"shp_a-b"
-"JAK.112",,"b-a","Tanah Merah - Pulo Gadung",1,"shp_b-a"
-"JAK.117",,"a-b","Terminal Tanjung Priok - Terminal Tanah Merdeka",0,"shp_a-b"
-"JAK.117",,"b-a","Terminal Tanah Merdeka - Terminal Tanjung Priok",1,"shp_b-a"
-"JAK-12",,"a-b","Tanah Abang - Kebayoran Lama via Pos Pengumben",0,"shp_a-b"
-"JAK-12",,"b-a","Kebayoran Lama - Tanah Abang via Pos Pengumben",1,"shp_b-a"
-"JAK.13",,"a-b","Tanah Abang - Kota Intan via Jembatan Lima",0,"shp_a-b"
-"JAK.13",,"b-a","Kota Intan -  Tanah Abang via Jembatan Lima",1,"shp_b-a"
-"JAK.13",,"a-b1","Tanah Abang - Kota Intan via Asemka",0,"shp_a-b1"
-"JAK.13",,"b-a1","Kota Intan -  Tanah Abang via Asemka",1,"shp_b-a1"
-"JAK-14",,"a-b","Tanah Abang - Meruya",0,"shp_a-b"
-"JAK-14",,"b-a","Meruya - Tanah Abang",1,"shp_b-a"
-"OK-15",,"a-b","Tanjung Priok - Bulak Turi",0,"shp_a-b"
-"OK-15",,"b-a","Bulak Turi - Tanjung Priok",1,"shp_b-a"
-"OK-16",,"a-b","Cililitan - Condet",0,"shp_a-b"
-"OK-16",,"b-a","Condet - Cililitan",1,"shp_b-a"
-"OK-17",,"a-b","Pulo Gadung - Senen",0,"shp_a-b"
-"OK-17",,"b-a","Senen - Pulo Gadung",1,"shp_b-a"
-"OK-18",,"a-b","Stasiun Duren Kalibata - Kuningan",0,"shp_a-b"
-"OK-18",,"b-a","Kuningan - Stasiun Duren Kalibata",1,"shp_b-a"
-"OK-19",,"a-b","Pinang Ranti - Setu",0,"shp_a-b"
-"OK-19",,"b-a","Setu - Pinang Ranti",1,"shp_b-a"
-"OK-20",,"a-b","Lubang Buaya - Cawang UKI",0,"shp_a-b"
-"OK-20",,"b-a","Cawang UKI - Lubang Buaya",1,"shp_b-a"
-"OK-21",,"a-b","PGC - Dwikora",0,"shp_a-b"
-"OK-21",,"b-a","Dwikora - PGC",1,"shp_b-a"
-"OK-22",,"a-b","Penas Kalimalang - Dwikora",0,"shp_a-b"
-"OK-22",,"b-a","Dwikora - Penas Kalimalang",1,"shp_b-a"
-"JAK-24",,"a-b","Senen - Pulo Gadung via Kelapa Gading",0,"shp_a-b"
-"JAK-24",,"b-a","Pulo Gadung - Senen via Kelapa Gading",1,"shp_b-a"
-"OK-25",,"a-b","Kalisari - Pasar Rebo",0,"shp_a-b"
-"OK-25",,"b-a","Pasar Rebo - Kalisari",1,"shp_b-a"
-"OK-26",,"a-b","Duren Sawit - Rawamangun",0,"shp_a-b"
-"OK-26",,"b-a","Rawamangun - Duren Sawit",1,"shp_b-a"
-"OK-27",,"a-b","Rorotan - Pulo Gebang",0,"shp_a-b"
-"OK-27",,"b-a","Pulo Gebang - Rorotan",1,"shp_b-a"
-"OK-28",,"a-b","Pasar Rebo - Taman Wiladatika",0,"shp_a-b"
-"OK-28",,"b-a","Taman Wiladatika - Pasar Rebo",1,"shp_b-a"
-"OK-29",,"a-b","Tanjung Priok - Semper - Rusun Sukapura",0,"shp_a-b"
-"OK-29",,"b-a","Rusun Sukapura - Semper - Tanjung Priok",1,"shp_b-a"
-"OK-30",,"a-b","Grogol - Meruya",0,"shp_a-b"
-"OK-30",,"b-a","Meruya - Grogol",1,"shp_b-a"
-"OK-31",,"a-b","Pondok Labu - Blok M",0,"shp_a-b"
-"OK-31",,"b-a","Blok M - Pondok Labu",1,"shp_b-a"
-"OK-32",,"a-b","Petukangan - Lebak Bulus",0,"shp_a-b"
-"OK-32",,"b-a","Lebak Bulus - Petukangan",1,"shp_b-a"
-"OK-33",,"a-b","Pulo Gadung - Kota",0,"shp_a-b"
-"OK-33",,"b-a","Kota - Pulo Gadung",1,"shp_b-a"
-"JAK-34",,"a-b","Rawamangun - Klender",0,"shp_a-b"
-"JAK-34",,"b-a","Klender - Rawamangun",1,"shp_b-a"
-"JAK.35",,"a-b","Rawamangun - Pangkalan Jati",0,"shp_a-b"
-"JAK.35",,"b-a","Pangkalan Jati - Rawamangun",1,"shp_b-a"
-"JAK-36",,"a-b","Cilangkap - Cililitan",0,"shp_a-b"
-"JAK-36",,"b-a","Cililitan - Cilangkap",1,"shp_b-a"
-"JAK-37",,"a-b","Cililitan - Condet via Kayu Manis",0,"shp_a-b"
-"JAK-37",,"b-a","Condet - Cililitan via Kayu Manis",1,"shp_b-a"
-"JAK-38",,"a-b","Bulak Ringin - Kampung Rambutan",0,"shp_a-b"
-"JAK-38",,"b-a","Kampung Rambutan - Bulak Ringin",1,"shp_b-a"
-"JAK-39",,"a-b","Duren Sawit - Kalimalang",0,"shp_a-b"
-"JAK-39",,"b-a","Kalimalang - Duren Sawit",1,"shp_b-a"
-"JAK-40",,"a-b","Pulogebang - Taman Harapan Baru",0,"shp_a-b"
-"JAK-40",,"b-a","Taman Harapan Baru - Pulogebang",1,"shp_b-a"
-"JAK.41",,"a-b","Kampung Melayu - Pulo Gadung",0,"shp_a-b"
-"JAK.41",,"b-a","Pulo Gadung - Kampung Melayu",1,"shp_b-a"
-"JAK.42",,"a-b","Kampung Melayu - Pondok Kelapa",0,"shp_a-b"
-"JAK.42",,"b-a","Pondok Kelapa - Kampung Melayu",1,"shp_b-a"
-"JAK.43",,"a-b","Tongtek - Cililitan",0,"shp_a-b"
-"JAK.43",,"b-a","Cililitan - Tongtek",1,"shp_b-a"
-"JAK-44",,"a-b","Andara - Lenteng Agung",0,"shp_a-b"
-"JAK-44",,"b-a","Lenteng Agung - Andara",1,"shp_b-a"
-"JAK-45",,"a-b","Ragunan - Lebak Bulus",0,"shp_a-b"
-"JAK-45",,"b-a","Lebak Bulus - Ragunan",1,"shp_b-a"
-"JAK.46",,"a-b","Pasar Minggu - Jagakarsa",0,"shp_a-b"
-"JAK.46",,"b-a","Jagakarsa - Pasar Minggu",1,"shp_b-a"
-"JAK-47",,"a-b","Terminal Pasar Minggu - Ciganjur",0,"shp_a-b"
-"JAK-47",,"b-a","Ciganjur - Terminal Pasar Minggu",1,"shp_b-a"
-"JAK.49",,"a-b","Lebak Bulus - Cipulir",0,"shp_a-b"
-"JAK.49",,"b-a","Cipulir - Lebak Bulus",1,"shp_b-a"
-"JAK-50",,"a-b","Kalideres - Puri Kembangan",0,"shp_a-b"
-"JAK-50",,"b-a","Puri Kembangan - Kalideres",1,"shp_b-a"
-"JAK-51",,"a-b","Taman Kota - Budi Luhur",0,"shp_a-b"
-"JAK-51",,"b-a","Budi Luhur - Taman Kota",1,"shp_b-a"
-"JAK.52",,"a-b","Kalideres - Muara Angke",0,"shp_a-b"
-"JAK.52",,"b-a","Muara Angke - Kalideres",1,"shp_b-a"
-"JAK.53",,"a-b","Grogol - Pos Pengumben via Slipi",0,"shp_a-b"
-"JAK.53",,"b-a","Pos Pengumben - Grogol via Slipi",1,"shp_b-a"
-"JAK.54",,"a-b","Grogol - Benhil",0,"shp_a-b"
-"JAK.54",,"b-a","Benhil - Grogol",1,"shp_b-a"
-"JAK-56",,"a-b","Grogol - Srengseng",0,"shp_a-b"
-"JAK-56",,"b-a","Srengseng - Grogol",1,"shp_b-a"
-"JAK-58",,"a-b","Cilincing - Rorotan",0,"shp_a-b"
-"JAK-58",,"b-a","Rorotan - Cilincing",1,"shp_b-a"
-"JAK-59",,"a-b","Rawamangun - Rawa Sengon",0,"shp_a-b"
-"JAK-59",,"b-a","Rawa Sengon - Rawamangun",1,"shp_b-a"
-"JAK-60",,"a-b","Kelapa Gading - Sunter Kemayoran",0,"shp_a-b"
-"JAK-60",,"b-a","Sunter Kemayoran - Kelapa Gading",1,"shp_b-a"
-"JAK-61",,"a-b","Pulo Gadung - Cempaka Putih",0,"shp_a-b"
-"JAK-61",,"b-a","Cempaka Putih - Pulo Gadung",1,"shp_b-a"
-"JAK-64",,"a-b","Lenteng Agung - Aselih",0,"shp_a-b"
-"JAK-64",,"b-a","Aselih - Lenteng Agung",1,"shp_b-a"
-"JAK.71",,"a-b","Kampung Rambutan - Pinang Ranti",0,"shp_a-b"
-"JAK.71",,"b-a","Pinang Ranti - Kampung Rambutan",1,"shp_b-a"
-"JAK-72",,"a-b","Kampung Rambutan - Pasar Rebo",0,"shp_a-b"
-"JAK-72",,"b-a","Pasar Rebo - Kampung Rambutan",1,"shp_b-a"
-"JAK.73",,"a-b","Jambore Cibubur - Pasar Rebo",0,"shp_a-b"
-"JAK.73",,"b-a","Pasar Rebo - Jambore Cibubur",1,"shp_b-a"
-"JAK.74",,"a-b","Terminal Rawamangun - Cipinang Muara",0,"shp_a-b"
-"JAK.74",,"b-a","Cipinang Muara - Terminal Rawamangun",1,"shp_b-a"
-"JAK-75",,"a-b","Kampung Pulo - Halim via Cililitan",0,"shp_a-b"
-"JAK-75",,"b-a","Halim - Kampung Pulo via Cililitan",1,"shp_b-a"
-"JAK-77",,"a-b","Tanjung Priok - Jembatan Hitam",0,"shp_a-b"
-"JAK-77",,"b-a","Jembatan Hitam - Tanjung Priok",1,"shp_b-a"
-"JAK.80",,"a-b","Rawa Buaya - Rawa Kompeni",0,"shp_a-b"
-"JAK.80",,"b-a","Rawa Kompeni - Rawa Buaya",1,"shp_b-a"
-"JAK.84",,"a-b","Kampung Melayu - Kapin Raya",0,"shp_a-b"
-"JAK.84",,"b-a","Kapin Raya - Kampung Melayu",1,"shp_b-a"
-"JAK.85",,"a-b","Bintara - Cipinang Indah",0,"shp_a-b"
-"JAK.85",,"b-a","Cipinang Indah - Bintara",1,"shp_b-a"
-"JAK-88",,"a-b","Tanjung Priok - Ancol Barat",0,"shp_a-b"
-"JAK-88",,"b-a","Ancol Barat - Tanjung Priok",1,"shp_b-a"
-"1K","weekday","A0","Cibubur - Blok M",0,"shp_A0"
-"1K","weekday","A1","Blok M - Cibubur",1,"shp_A1"
-"6P","weekday","a-b","Cibubur - Kuningan",0,"shp_a-b"
-"6P","weekday","b-a","Kuningan - Cibubur",1,"shp_b-a"
-"B13","weekday","B13.001","Summarecon Bekasi - Blok M",0,"shp_B13_001"
-"B13","weekday","B13.002","Blok M - Summarecon Bekasi",1,"shp_B13_002"
-"B14","weekday","B14.001","Summarecon Bekasi - Kuningan",0,"shp_B14_001"
-"B14","weekday","B14.002","Kuningan - Summarecon Bekasi",1,"shp_B14_002"
-"S12","weekday","a-b1","BSD Serpong - Stasiun MRT Fatmawati",0,"shp_a-b1"
-"S12","weekday","b1-a","Stasiun MRT Fatmawati - BSD Serpong",1,"shp_b1-a"
-"S12","weekday","a-b","BSD Serpong - Bundaran Senayan",0,"shp_a-b"
-"S12","weekday","b-a","Bundaran Senayan - BSD Serpong",1,"shp_b-a"
-"S31","weekday","a-c","Bintaro - Stasiun MRT Fatmawati",0,"shp_a-c"
-"S31","weekday","c-a","Stasiun MRT Fatmawati - Bintaro",1,"shp_c-a"
-"S31","weekday","a-b","Bintaro - Blok M",0,"shp_a-b"
-"S31","weekday","b-a","Blok M - Bintaro",1,"shp_b-a"
+route_id,service_id,trip_id,trip_headsign,direction_id,block_id,shape_id
+10A,SH,10A-R03,Rusun Marunda - Tanjung Priok,0,,uzgh
+10A,SH,10A-R04,Tanjung Priok - Rusun Marunda,1,,6ysj
+10B,SH,10B-R01,Rusun Cipinang Besar Selatan - Halim,0,,10B-R01_shp
+10B,SH,10B-R02,Halim - Rusun Cipinang Besar Selatan,1,,10B-R02_shp
+10D,SH,10D-R01,Tanjung Priok - Kampung Rambutan,0,,10D-R01_shp
+10D,SH,10D-R02,Kampung Rambutan - Tanjung Priok,1,,10D-R02_shp
+10H,SH,10H-R07,Tanjung Priok - Bundaran Senayan,0,,ywhl
+10H,SH,10H-R08,Bundaran Senayan - Tanjung Priok,1,,f5wm
+10,SH,10-R01,Tanjung Priok - PGC,0,,10-R01_shp
+10,SH,10-R02,PGC - Tanjung Priok,1,,10-R02_shp
+11B,SH,11B-R01,Rusun Rawa Bebek - Penggilingan,0,,11B-R01_shp
+11B,SH,11B-R02,Penggilingan - Rusun Rawa Bebek,1,,11B-R02_shp
+11D,SH,11D-R02,Pulo Gadung - Pulo Gebang via PIK,1,,11D-R02_shp
+11D,SH,11D-R03,Pulo Gebang - Pulo Gadung via PIK,0,,ro55
+11M,SH,11M-R01,Rusun Rawa Bebek - Bukit Duri,0,,11M-R01_shp
+11M,SH,11M-R02,Bukit Duri - Rusun Rawa Bebek,1,,11M-R02_shp
+11P,SH,11P-R01,Rusun Pondok Bambu - Walikota Jakarta Timur,0,,11P-R01_shp
+11P,SH,11P-R02,Walikota Jakarta Timur - Rusun Pondok Bambu,1,,11P-R02_shp
+11Q,SH,11Q-R07,Pulo Gebang - Bidara Cina via BKT,1,,yheo
+11Q,SH,11Q-R08,Bidara Cina - Pulo Gebang via BKT,0,,bdw0
+11,SH,11-R02,Kampung Melayu - Pulo Gebang,1,,52ap
+11,SH,11-R03,Pulo Gebang - Kampung Melayu,0,,zd57
+12A,SH,12A-R03,Pelabuhan Kali Adem - Beos,0,,12A-R03_shp
+12A,SH,12A-R04,Beos - Pelabuhan Kali Adem,1,,12A-R04_shp
+12B,SH,12B-R03,Pluit - Senen,0,,12B-R03_shp
+12B,SH,12B-R04,Senen - Pluit,1,,12B-R04_shp
+12C,SH,12C-R01,Rusun Waduk Pluit - Penjaringan,0,,12C-R01_shp
+12C,SH,12C-R02,Penjaringan - Rusun Waduk Pluit,1,,12C-R02_shp
+12F,SH,12F-R01,Rusun Marunda - Rusun Waduk Pluit,0,,12F-R01_shp
+12F,SH,12F-R02,Rusun Waduk Pluit - Rusun Marunda,1,,12F-R02_shp
+12H,SH,12H-R01,Rusun Penjaringan - Penjaringan,0,,12H-R01_shp
+12H,SH,12H-R02,Penjaringan - Rusun Penjaringan,1,,12H-R02_shp
+12P,SH,12P-R01,St. LRT Pegangsaan Dua - JIS,0,,12P-R01_shp
+12P,SH,12P-R02,JIS - St. LRT Pegangsaan Dua,1,,12P-R02_shp
+12,SH,12-R04,Pluit - Tanjung Priok,1,,12-R04_shp
+12,SH,12-R05,Tanjung Priok - Pluit,0,,l3by
+13C,SH,13C-R03,Puri Beta - Dukuh Atas,0,,8a5f
+13C,SH,13C-R04,Dukuh Atas - Puri Beta,1,,5tlt
+13,SH,13-R01,Ciledug - Tegal Mampang,0,,13-R01_shp
+13,SH,13-R02,Tegal Mampang - Ciledug,1,,13-R02_shp
+14A,SH,14A-R01,Jakarta International Stadium - Juanda,0,,qr7z
+14A,SH,14A-R02,Juanda - Jakarta International Stadium,1,,ooxs
+14B,SH,14B-R01,Tanjung Priok - Senen via JIS,0,,0tqw
+14B,SH,14B-R02,Senen - Tanjung Priok via JIS,1,,kww7
+14,SH,14-R05,JIS - Senen,0,,yms0
+14,SH,14-R06,Senen - JIS,1,,1wby
+1A,SH,1A-R09,Pantai Maju - Balai Kota,0,,4xkx
+1A,HK,1A-R10,Balai Kota - Pantai Maju,1,,jylo
+1A,HL,1A-R11,Balai Kota - Pantai Maju,1,,0d6w
+1B,SH,1B-R01,St. Palmerah - Tosari,0,,1B-R01_shp
+1B,SH,1B-R02,Tosari - St. Palmerah,1,,1B-R02_shp
+1C,SH,1C-R01,Bintaro - Blok M,0,,1C-R01_shp
+1C,SH,1C-R02,Blok M - Pesanggrahan,1,,1C-R02_shp
+1E,SH,1E-R01,Pondok Labu - Blok M,0,,1E-R01_shp
+1E,SH,1E-R02,Blok M - Pondok Labu,1,,1E-R02_shp
+1F,SH,1F-R01,Stasiun Palmerah - Bundaran Senayan,0,,ibby
+1F,SH,1F-R02,Bundaran Senayan - St. Palmerah,1,,t04u
+1H,SH,1H-R01,Stasiun Gondangdia - Tanah Abang,0,,1H-R01_shp
+1H,SH,1H-R02,Tanah Abang - Gondangdia,1,,1H-R02_shp
+1K,SH,1K-R01,Cibubur - Blok M,0,,1K-R01_shp
+1K,HK,1K-R02,Blok M - Cibubur,1,,1K-R02_shp
+1M,SH,1M-R02,Blok M - Meruya,1,,1M-R02_shp
+1M,SH,1M-R03,Meruya - Blok M,0,,bctp
+1N,SH,1N-R05,Tanah Abang - Blok M,0,,fuvn
+1N,SH,1N-R06,Blok M - Tanah Abang,1,,zn7l
+1P,SH,1P-R03,Senen - Blok M,0,,1P-R03_shp
+1P,SH,1P-R04,Blok M - Senen,1,,1P-R04_shp
+1Q,SH,1Q-R03,Ciputat - Blok M via Rempoa,0,,v0rr
+1Q,SH,1Q-R04,Blok M - Ciputat via Rempoa,1,,sdr5
+1,SH,1-R07,Blok M - Kali Besar Barat,0,,usj3
+1,SH,1-R08,Kali Besar Barat - Blok M,1,,mlcx
+1R,SH,1R-R04,Tanah Abang - Senen,1,,gtbj
+1R,SH,1R-R05,Senen - Tanah Abang,0,,4w0n
+1T,HK,1T-R03,Cibubur - Balai Kota,0,,kc0p
+1T,HK,1T-R04,Balai Kota - Cibubur,1,,1kux
+2A,SH,2A-R03,Pulo Gadung 1 - Rawa Buaya,0,,2A-R03_shp
+2A,SH,2A-R04,Rawa Buaya - Pulo Gadung 1,1,,2A-R04_shp
+2B,SH,2B-R05,Transera Harapan Indah - Pulo Gadung,0,,py1k
+2B,SH,2B-R06,Pulo Gadung - Transera Harapan Indah,1,,wham
+2E,SH,2E-R05,Rusun Rawa Bebek - Rusun Pulo Gebang via Penggilingan,0,,isz8
+2E,SH,2E-R06,Rusun Pulo Gebang - Rusun Rawa Bebek,1,,oq52
+2F,SH,2F-R01,Pulo Gadung - Rusun Cakung Barat Albo,0,,2F-R01_shp
+2F,SH,2F-R04,Rusun Cakung Barat - Pulo Gadung,1,,qiea
+2H,SH,2H-R03,Rusun Jati Rawasari - Senen,0,,2H-R03_shp
+2H,SH,2H-R04,Senen - Rusun Jati Rawasari,1,,2H-R04_shp
+2P,SH,2P-R05,Gondangdia - Senen,0,,2P-R05_shp
+2P,SH,2P-R08,Senen - Gondangdia,1,,s55r
+2Q,SH,2Q-R01,Gondangdia - Balai Kota,0,,2Q-R01_shp
+2Q,SH,2Q-R02,Balai Kota - Gondangdia,1,,2Q-R02_shp
+2,SH,2-R04,Monas - Pulo Gadung,1,,7maa
+2,SH,2-R05,Pulo Gadung - Monas via Veteran,0,,0d2b
+3A,SH,3A-R01,Rusun Pesakih - Kalideres,0,,3A-R01_shp
+3A,SH,3A-R02,Kalideres - Rusun Pesakih,1,,3A-R02_shp
+3B,SH,3B-R03,Rusun Flamboyan - Cengkareng,0,,3B-R03_shp
+3B,SH,3B-R04,Cengkareng - Rusun Flamboyan,1,,3B-R04_shp
+3C,SH,3C-R01,Rusun Kapuk Muara - Penjaringan,0,,3C-R01_shp
+3C,SH,3C-R02,Penjaringan - Rusun Kapuk Muara,1,,3C-R02_shp
+3E,SH,3E-R07,Sentraland Cengkareng - Puri Kembangan,0,,9cex
+3E,SH,3E-R06,Puri Kembangan - Sentraland Cengkareng,1,,3E-R06_shp
+3F,SH,3F-R01,Kalideres - Gelora Bung Karno,0,,3F-R01_shp
+3F,SH,3F-R02,Gelora Bung Karno - Kalideres,1,,3F-R02_shp
+3H,SH,3H-R04,Kota - Jelambar,1,,ly6c
+3H,SH,3H-R05,St. Pesing - Kota,0,,xahk
+3,HR,3-R05,Kalideres - Monas via Veteran,0,,z4hg
+3,HM,3-R05C,Kalideres - Monas via Veteran,0,,3-R05C_shp
+3,HR,3-R06,Monas - Kalideres via Veteran,1,,6jrs
+3,HM,3-R06C,Monas - Kalideres via Veteran,1,,3-R06C_shp
+3,HM,3-R13,Kalideres - RS Sumber Waras (CFD Jakpus),0,,gh5d
+3,HM,3-R14,RS Sumber Waras - Kalideres (CFD Jakpus),1,,xxkz
+4B,SH,4B-R01,Stasiun Manggarai - Universitas Indonesia,0,,4B-R01_shp
+4B,SH,4B-R02,Universitas Indonesia - Stasiun Manggarai,1,,4B-R02_shp
+4C,SH,4C-R05,Pemuda Merdeka - Bundaran Senayan,0,,ayiz
+4C,SH,4C-R06,Bundaran Senayan - Pemuda Merdeka,1,,xn1v
+4D,SH,4D-R01,Pulo Gadung - Kuningan,0,,e5u4
+4D,SH,4D-R02,Kuningan - Pulo Gadung,1,,2dff
+4E,SH,4E-R01,Rusun Jatinegara Kaum - Pulo Gadung,0,,4E-R01_shp
+4E,SH,4E-R03,Pulo Gadung - Rusun Jatinegara Kaum,1,,4E-R03_shp
+4F,SH,4F-R03,Pinang Ranti - Pulo Gadung,0,,gywy
+4F,SH,4F-R04,Pulo Gadung - Pinang Ranti,1,,4F-R04_shp
+4,HR,4-R10,Pulo Gadung - Galunggung,0,,s9j4
+4,HM,4-R10C,Pulo Gadung - Galunggung,0,,4-R10C_shp
+4,HR,4-R11,Galunggung - Pulo Gadung,1,,8swd
+4,HM,4-R11C,Galunggung - Pulo Gadung,1,,4-R11C_shp
+4,HM,4-R12,Pulo Gadung - Galunggung via Bermis (CFD),0,,7q1c
+4,HM,4-R13,Galunggung - Pulo Gadung via Bermis (CFD),1,,7l7w
+5B,SH,5B-R05,Stasiun Tebet - Bidara Cina,0,,lhk3
+5B,SH,5B-R06,Bidara Cina - Stasiun Tebet,1,,vhge
+5C,SH,5C-R09,Cililitan - Juanda,1,,nfz8
+5C,SH,5C-R10,Juanda - PGC,0,,8wrf
+5D,SH,5D-R01,Cililitan - Ancol,1,,5D-R01_shp
+5D,SH,5D-R02,Ancol - PGC,0,,5D-R02_shp
+5F,SH,5F-R03,Kampung Melayu - Tanah Abang,0,,mjsb
+5F,SH,5F-R04,Tanah Abang - Kampung Melayu,1,,9mxc
+5M,SH,5M-R04,Tanah Abang - Kampung Melayu,1,,5M-R04_shp
+5M,SH,5M-R05,Kampung Melayu - Tanah Abang via Cikini,0,,d2wc
+5N,SH,5N-R01,Kampung Melayu - Ragunan,0,,5N-R01_shp
+5N,SH,5N-R02,Ragunan - Kampung Melayu,1,,5N-R02_shp
+5,SH,5-R01,Kampung Melayu - Ancol,0,,7gcp
+5,SH,5-R02,Ancol - Kampung Melayu,1,,06fg
+6A,SH,6A-R07,Balai Kota - Ragunan via Kuningan,1,,cn44
+6A,SH,6A-R08,Ragunan - Balai Kota via Kuningan,1,,9n43
+6B,SH,6B-R07,Balai Kota - Ragunan via Semanggi,0,,0mgr
+6B,SH,6B-R08,Ragunan - Balai Kota via Semanggi,1,,agap
+6C,SH,6C-R03,Stasiun Tebet - Kuningan,0,,1fh5
+6C,SH,6C-R04,Kuningan - Stasiun Tebet,1,,neg8
+6D,SH,6D-R03,Stasiun Tebet - Bundaran Senayan,1,,6D-R03_shp
+6D,SH,6D-R04,Bundaran Senayan - Stasiun Tebet,0,,6D-R04_shp
+6H,SH,6H-R04,Lebak Bulus - Senen,1,,6H-R04_shp
+6H,SH,6H-R05,Senen - Lebak Bulus,0,,phlx
+6K,SH,6K-R03,Kuningan - Karet,0,,57jt
+6K,SH,6K-R04,Karet - Kuningan,1,,psf2
+6M,SH,6M-R01,Stasiun Manggarai - Blok M,0,,qa3s
+6M,SH,6M-R02,Blok M - Stasiun Manggarai,1,,11om
+6N,SH,6N-R03,Ragunan - Blok M via Kemang,0,,6N-R03_shp
+6N,SH,6N-R04,Blok M - Ragunan via Kemang,1,,6N-R04_shp
+6P,SH,6P-R01,Cibubur - Kuningan,0,,6P-R01_shp
+6P,SH,6P-R02,Kuningan - Cibubur,1,,6P-R02_shp
+6Q,SH,6Q-R07,Casablanca - Dukuh Atas via Epincentrum Raya,1,,w2h8
+6Q,SH,6Q-R08,Galunggung - Casablanca via Epicentrum Raya,0,,vs20
+6,SH,6-R03,Ragunan - Galunggung,0,,f8tv
+6,SH,6-R04,Galunggung - Ragunan,1,,vpwb
+6T,SH,6T-R03,Pasar Minggu - Velbak via Jeruk Purut,0,,jcpj
+6T,SH,6T-R04,Velbak - Pasar Minggu via Jeruk Purut,1,,rg9n
+6U,SH,6U-R01,Blok M - Pasar Minggu,0,,j9gs
+6U,SH,6U-R02,Pasar Minggu - Blok M,1,,b0x4
+6V,SH,6V-R01,Ragunan - Gelora Bung Karno,0,,w9zp
+6V,SH,6V-R02,Gelora Bung Karno - Ragunan,1,,wdd8
+7A,SH,7A-R01,Kampung Rambutan - Lebak Bulus,0,,7A-R01_shp
+7A,SH,7A-R02,Lebak Bulus - Kampung Rambutan,1,,7A-R02_shp
+7B,SH,7B-R02,Blok M - Kampung Rambutan,1,,7B-R02_shp
+7B,SH,7B-R03,Kampung Rambutan - Blok M,0,,7B-R03_shp
+7C,SH,7C-R01,Cibubur - Cawang Cililitan,0,,7C-R01_shp
+7C,SH,7C-R02,Cawang Cililitan - Cibubur,1,,7C-R02_shp
+7D,SH,7D-R16,TMII - Tegal Parang,0,,oxoo
+7D,SH,7D-R18,Tegal Parang - TMII,1,,8mx3
+7E,SH,7E-R01,Kampung Rambutan - Ragunan,0,,7E-R01_shp
+7E,SH,7E-R05,Ragunan - Kampung Rambutan,1,,7E-R05_shp
+7F,SH,7F-R05,Kampung Rambutan - Juanda,0,,14r8
+7F,SH,7F-R06,Juanda - Kampung Rambutan,1,,3ggl
+7P,SH,7P-R03,Pondok Kelapa - Cawang Sentral,0,,k64j
+7P,SH,7P-R04,Cawang Sentral - Pondok Kelapa,1,,2exj
+7Q,SH,7Q-R01,Blok M - PGC,0,,7Q-R01_shp
+7Q,SH,7Q-R02,PGC - Blok M,1,,7Q-R02_shp
+7,SH,7-R01,Kampung Rambutan - Kampung Melayu,0,,jzgu
+7,SH,7-R02,Kampung Melayu - Kampung Rambutan,1,,6y7e
+7R,HK,7R-R01,Cibubur - Pluit,0,,g49w
+7T,HK,7T-R01,Cibubur - Tanjung Priok,0,,jtn1
+7U,HK,7U-R01,Cibubur - Ancol,0,,avs0
+7V,SH,7V-R01,Cibubur - Kampung Rambutan,0,,t566
+7V,SH,7V-R02,Kampung Rambutan - Cibubur,1,,2e1d
+7W,SH,7W-R01,Cawang - St. Kereta Cepat Halim,0,,lxvv
+7W,SH,7W-R02,St. Kereta Cepat Halim - Cawang,1,,zapd
+7W,SH,7W-R03,Cawang Soetoyo - BNN,0,,y7u9
+7W,SH,7W-R04,BNN - Cawang Soetoyo,1,,dyf7
+8A,HM,8A-R05,Jelambar - Pasar Baru,0,,3pbz
+8A,HM,8A-R06,Pasar Baru - Jelambar,1,,fzku
+8C,SH,8C-R05,Kebayoran - Tanah Abang,0,,g8xe
+8C,SH,8C-R06,Tanah Abang - Kebayoran,1,,ux4b
+8D,SH,8D-R03,Blok M - Joglo,0,,g717
+8D,SH,8D-R04,Joglo - Blok M,1,,h02n
+8E,SH,8E-R01,Bintaro - Blok M,0,,8E-R01_shp
+8E,SH,8E-R03,Blok M - Bintaro,1,,xhbh
+8K,SH,8K-R05,Batu Sari - Jelambar,0,,gl7q
+8K,SH,8K-R07,Jelambar - Batu Sari,1,,nvly
+8M,SH,8M-R02,Tanah Abang - Tanjung Duren,1,,8M-R02_shp
+8M,SH,8M-R03,Tanjung Duren - Tanah Abang,0,,rrvd
+8,SH,8-R04,Pasar Baru - Lebak Bulus,1,,8-R04_shp
+8,SH,8-R07,Lebak Bulus - Pasar Baru,0,,jl9u
+9A,SH,9A-R05,Cililitan - Kali Grogol,0,,w55k
+9A,SH,9A-R06,Kali Grogol - Cililitan,1,,znif
+9C,SH,9C-R01,Pinang Ranti - Bundaran Senayan,0,,nbut
+9C,SH,9C-R02,Bundaran Senayan - Pinang Ranti,1,,76io
+9D,SH,9D-R04,Pasar Minggu - Tanah Abang,0,,9D-R04_shp
+9D,SH,9D-R05,Tanah Abang - Pasar Minggu,1,,qso3
+9E,SH,9E-R01,Kebayoran Lama - Jelambar,0,,9E-R01_shp
+9E,SH,9E-R03,Jelambar - Pasar Kebayoran Lama,1,,zl3f
+9F,SH,9F-R01,Rusun Tambora - Pluit,0,,9F-R01_shp
+9F,SH,9F-R02,Pluit - Rusun Tambora,1,,9F-R02_shp
+9H,SH,9H-R11,Cipedak - Pasar Minggu,0,,9H-R11_shp
+9H,SH,9H-R12,Pasar Minggu - Cipedak,1,,9H-R12_shp
+9N,SH,9N-R03,Pinang Ranti - Simpang Cawang,0,,ptzz
+9N,SH,9N-R04,Simpang Cawang - Pinang Ranti,1,,l7sv
+9,SH,9-R01,Pinang Ranti - Pluit,0,,9-R01_shp
+9,SH,9-R02,Pluit - Pinang Ranti,1,,9-R02_shp
+9ST,SH,9ST-R03,Pesing - Kali Grogol,0,,o133
+9ST,SH,9ST-R04,Kali Grogol - Pesing,1,,izok
+B11,SH,B11-R10,Cawang - Summarecon Bekasi,1,,2tq6
+B11,SH,B11-R11,Summarecon Bekasi - Cawang,0,,mx84
+B13,HK,B13-R01,Bekasi Barat - Blok M,0,,B13-R01_shp
+B13,HK,B13-R02,Blok M - Bekasi Barat,1,,B13-R02_shp
+B14,HK,B14-R01,Bekasi Barat - Kuningan,0,,B14-R01_shp
+B14,HK,B14-R02,Kuningan - Bekasi Barat,1,,B14-R02_shp
+B21,SH,B21-R09,Bekasi Timur - Cawang,0,,x3d0
+B21,SH,B21-R10,Cawang - Bekasi Timur,1,,uza8
+BW2,SH,BW2-L02,Monas Explorer,0,,5cg3
+BW1,SH,BW1-L02,Sejarah Jakarta,0,,zro4
+BW4,SH,BW4-L01,Pencakar Langit,0,,BW4-L01_shp
+BW9,SH,BW9-R05,Kota Tua - PIK,0,,ecry
+BW9,SH,BW9-R06,PIK - Kota Tua,1,,d994
+D11,SH,D11-R07,Depok - Cawang Sentral via St. LRT Harjamukti,0,,ftgt
+D11,SH,D11-R08,Cawang Sentral - Depok,1,,hbfl
+D21,SH,D21-R01,Universitas Indonesia - Lebak Bulus,0,,D21-R01_shp
+D21,SH,D21-R02,Lebak Bulus - Universitas Indonesia,1,,D21-R02_shp
+D31,HK,D31-R03,Cinere - Kuningan,0,,D31-R03_shp
+D31,HK,D31-R04,Kuningan - Cinere,1,,D31-R04_shp
+D32,HK,D32-R01,Cinere - Bundaran Senayan,0,,D32-R01_shp
+D32,HK,D32-R02,Bundaran Senayan - Cinere,1,,D32-R02_shp
+JAK.01,SH,JAK.01-R01,Tanjung Priok - Plumpang,0,,JAK.01-R01_shp
+JAK.01,SH,JAK.01-R02,Plumpang - Tanjung Priok,1,,JAK.01-R02_shp
+JAK.02,SH,JAK.02-R06,Duren Sawit - Term. Kampung Melayu,1,,671v
+JAK.02,SH,JAK.02-R07,Term. Kampung Melayu - Duren Sawit,0,,g4il
+JAK.03,SH,JAK.03-R01,Lebak Bulus - Andara,0,,JAK.03-R01_shp
+JAK.03,SH,JAK.03-R02,Andara - Lebak Bulus,1,,JAK.03-R02_shp
+JAK.04,SH,JAK.04-R01,Tubagus Angke - Grogol,0,,JAK.04-R01_shp
+JAK.04,SH,JAK.04-R02,Grogol - Tubagus Angke,1,,JAK.04-R02_shp
+JAK.05,SH,JAK.05-R01,Semper - Rorotan,0,,JAK.05-R04_shp
+JAK.05,SH,JAK.05-R02,Rorotan - Semper,1,,JAK.05-R03_shp
+JAK.06,SH,JAK.06-R01,Pondok Gede - Kampung Rambutan,0,,JAK.06-R01_shp
+JAK.06,SH,JAK.06-R02,Kampung Rambutan - Pondok Gede,1,,JAK.06-R02_shp
+JAK.07,SH,JAK.07-R01,Tanah Abang - Grogol Via Tawakal,0,,JAK.07-R01_shp
+JAK.07,SH,JAK.07-R02,Grogol - Tanah Abang via Tawakal,1,,JAK.07-R02_shp
+JAK.08,SH,JAK.08-R03,Roxy - Benhil,0,,s7zo
+JAK.08,SH,JAK.08-R04,Benhil - Roxy,1,,hovv
+JAK.09,SH,JAK.09-R01,Tanah Abang - Karet,0,,o4vt
+JAK.09,SH,JAK.09-R02,Karet - Tanah Abang,1,,JAK.09-R02_shp
+JAK.100,SH,JAK.100-R01,Term. Pulo Gebang - Rusun Pinus Elok,0,,uzwp
+JAK.100,SH,JAK.100-R03,Rusun Pinus Elok - Term. Pulo Gebang,1,,hn8l
+JAK.102,SH,JAK.102-R01,Blok M - Lebak Bulus,0,,wz7u
+JAK.102,SH,JAK.102-R02,Lebak Bulus - Blok M,1,,0n45
+JAK.105,SH,JAK.105-R01,Stasiun Tebet - Rusun Cipinang Muara,0,,f1c5
+JAK.105,SH,JAK.105-R02,Rusun Cipinang Muara - Stasiun Tebet,1,,0m2z
+JAK.106,SH,JAK.106-R01,Terminal Klender - Terminal Kampung Melayu,0,,JAK.106-R01_shp
+JAK.106,SH,JAK.106-R03,Terminal Kampung Melayu - Terminal Klender,1,,JAK.106-R03_shp
+JAK.108,SH,JAK.108-R01,Kramat Jati - Bambu Apus,0,,doab
+JAK.108,SH,JAK.108-R02,Bambu Apus - Kramat Jati,1,,v3dx
+JAK.108,SH,JAK.108-R03,Kramat Jati - Bambu Apus,0,,71hv
+JAK.108,SH,JAK.108-R04,Bambu Apus - Kramat Jati,1,,rly5
+JAK.10A,SH,JAK.10A-L01,Gondangdia - Cikini via Salemba - Gondangdia,0,,JAK.10A-L01_shp
+JAK.10B,SH,JAK.10B-L01,Gondangdia - Cikini via Kramat - Gondangdia,0,,JAK.10B-L01_shp
+JAK.10,SH,JAK.10-R03,Tanah Abang - Kota,0,,JAK.10-R03_shp
+JAK.10,SH,JAK.10-R04,Kota - Tanah Abang,1,,JAK.10-R04_shp
+JAK.110A,SH,JAK.110A-R02,Terminal Terpadu Pulo Gebang - Rusun Marunda,1,,JAK.110A-R02_shp
+JAK.110A,SH,JAK.110A-R03,Rusun Marunda - Terminal Terpadu Pulo Gebang,0,,qo80
+JAK.112,SH,JAK.112-R01,Tanah Merah - Pulo Gadung,0,,JAK.112-R01_shp
+JAK.112,SH,JAK.112-R02,Pulo Gadung - Tanah Merah,1,,JAK.112-R02_shp
+JAK.113,SH,JAK.113-R03,Rusun Sindang Koja - Kampung Sawah,0,,JAK.113-R03_shp
+JAK.113,SH,JAK.113-R04,Kampung Sawah - Rusun Sindang Koja,1,,JAK.113-R04_shp
+JAK.115,SH,JAK.115-R03,Term. Tj. Priok - Pegangsaan II IGI,0,,JAK.115-R03_shp
+JAK.115,SH,JAK.115-R04,Pegangsaan II IGI - Term. Tj. Priok,1,,JAK.115-R04_shp
+JAK.117,SH,JAK.117-R05,Tanjung Priok - Tanah Merdeka,0,,v7nf
+JAK.117,SH,JAK.117-R06,Tanah Merdeka - Tanjung Priok,1,,hkpi
+JAK.118,SH,JAK.118-R03,Taman Waduk Papanggo - Kota Tua,0,,db7a
+JAK.118,SH,JAK.118-R04,Kota Tua - Taman Waduk Papanggo,1,,6d8i
+JAK.11,SH,JAK.11-R01,Tanah Abang - Kebayoran Lama,0,,JAK.11-R01_shp
+JAK.11,SH,JAK.11-R02,Kebayoran Lama - Tanah Abang,1,,JAK.11-R02_shp
+JAK.120,SH,JAK.120-R03,JIS - Term. Muara Angke,0,,9lt3
+JAK.120,SH,JAK.120-R04,Term. Muara Angke - JIS,1,,xcmw
+JAK.12,SH,JAK.12-R01,Tanah Abang - Kebayoran Lama via Pos Pengumben,0,,JAK.12-R01_shp
+JAK.12,SH,JAK.12-R02,Kebayoran Lama - Tanah Abang Via Pos Pengumben,1,,JAK.12-R02_shp
+JAK.13,SH,JAK.13-R03,Tanah Abang - Jembatan Lima,0,,JAK.13-R03_shp
+JAK.13,SH,JAK.13-R04,Jembatan Lima - Tanah Abang,1,,JAK.13-R04_shp
+JAK.14,SH,JAK.14-R01,Tanah Abang - Meruya,0,,JAK.14-R01_shp
+JAK.14,SH,JAK.14-R02,Meruya - Tanah Abang,1,,JAK.14-R02_shp
+JAK.15,SH,JAK.15-R04,Tanjung Priok - Rusun Marunda,1,,JAK.15-R04_shp
+JAK.15,SH,JAK.15-R05,Rusun Marunda - Tanjung Priok,0,,JAK.15-R05_shp
+JAK.16,SH,JAK.16-R01,Cililitan - Condet,0,,JAK.16-R01_shp
+JAK.16,SH,JAK.16-R02,Condet - Cililitan,1,,JAK.16-R02_shp
+JAK.17,SH,JAK.17-R01,Pulo Gadung - Senen,1,,JAK.17-R01_shp
+JAK.17,SH,JAK.17-R02,Senen - Pulo Gadung,1,,JAK.17-R02_shp
+JAK.18,SH,JAK.18-R01,Kalibata - Kuningan,0,,JAK.18-R01_shp
+JAK.18,SH,JAK.18-R02,Kuningan - Kalibata,1,,JAK.18-R02_shp
+JAK.19,SH,JAK.19-R01,Pinang Ranti - Kampung Rambutan,0,,JAK.19-R01_shp
+JAK.19,SH,JAK.19-R02,Kampung Rambutan - Pinang Ranti,1,,JAK.19-R02_shp
+JAK.20,SH,JAK.20-R01,Cawang Sentral - Lubang Buaya,0,,JAK.20-R01_shp
+JAK.20,SH,JAK.20-R02,Lubang Buaya - Cawang Sentral,1,,JAK.20-R02_shp
+JAK.21,SH,JAK.21-R01,Cililitan - Dwikora,0,,JAK.21-R01_shp
+JAK.21,SH,JAK.21-R02,Dwikora - Cililitan,1,,JAK.21-R02_shp
+JAK.22,SH,JAK.22-R03,Dwikora - Halim,0,,6hs4
+JAK.22,SH,JAK.22-R04,Halim - Dwikora,1,,meqn
+JAK.23,SH,JAK.23-R01,Senen - Pisangan Baru,0,,JAK.23-R01_shp
+JAK.23,SH,JAK.23-R02,Pisangan Baru - Senen,1,,JAK.23-R02_shp
+JAK.23,SH,JAK.23-R03,Senen - Pisangan Baru,0,,JAK.23-R01_shp
+JAK.24,SH,JAK.24-R01,Pulo Gadung - Senen via Kelapa Gading,0,,JAK.24-R01_shp
+JAK.24,SH,JAK.24-R02,Senen - Pulo Gadung Via Kelapa Gading,1,,JAK.24-R02_shp
+JAK.25,SH,JAK.25-R01,Kampung Rambutan - Kalisari,0,,JAK.25-R01_shp
+JAK.25,SH,JAK.25-R03,Kalisari - Kampung Rambutan,1,,JAK.25-R03_shp
+JAK.26,SH,JAK.26-R01,Duren Sawit - Rawamangun,0,,JAK.26-R01_shp
+JAK.26,SH,JAK.26-R02,Rawamangun - Duren Sawit,1,,JAK.26-R02_shp
+JAK.27,SH,JAK.27-R01,Pulo Gebang - Rorotan,0,,JAK.27-R01_shp
+JAK.27,SH,JAK.27-R02,Rorotan - Pulo Gebang,1,,JAK.27-R02_shp
+JAK.28,SH,JAK.28-R03,Pasar Rebo - St. LRT Harjamukti via Bulak Sereh,0,,lc16
+JAK.28,SH,JAK.28-R04,St. LRT Harjamukti - Pasar Rebo,1,,fntt
+JAK.29,SH,JAK.29-R03,Sukapura - Tanjung Priok,0,,JAK.29-R03_shp
+JAK.29,SH,JAK.29-R04,Tanjung Priok - Sukapura,1,,JAK.29-R04_shp
+JAK.30,SH,JAK.30-R01,Grogol - Meruya via Roxy,0,,JAK.30-R01_shp
+JAK.30,SH,JAK.30-R02,Meruya - Grogol Via Roxy,1,,JAK.30-R02_shp
+JAK.31,SH,JAK.31-R01,Blok M - Andara,0,,JAK.31-R01_shp
+JAK.31,SH,JAK.31-R02,Andara - Blok M,1,,JAK.31-R02_shp
+JAK.32,SH,JAK.32-R01,Lebak Bulus - Petukangan,0,,JAK.32-R01_shp
+JAK.32,SH,JAK.32-R02,Petukangan - Lebak Bulus,1,,JAK.32-R02_shp
+JAK.33,SH,JAK.33-R03,Kota - Pulo Gadung,1,,JAK.33-R03_shp
+JAK.33,SH,JAK.33-R04,Pulo Gadung - Kota,0,,JAK.33-R04_shp
+JAK.34,SH,JAK.34-R01,Klender - Rawamangun,0,,JAK.34-R01_shp
+JAK.34,SH,JAK.34-R02,Rawamangun - Klender,1,,JAK.34-R02_shp
+JAK.35,SH,JAK.35-R03,Rawamangun - Pangkalan Jati,1,,JAK.35-R03_shp
+JAK.35,SH,JAK.35-R05,Pangkalan Jati - Rawamangun,0,,JAK.35-R05_shp
+JAK.36,SH,JAK.36-R03,Cilangkap - Cililitan,0,,2yrb
+JAK.36,SH,JAK.36-R04,Cililitan - Cilangkap,1,,nwut
+JAK.37,SH,JAK.37-R01,Cililitan - Condet Via Kayu Manis,0,,JAK.37-R01_shp
+JAK.37,SH,JAK.37-R03,Condet - Cililitan via Kayu Manis,1,,y8zn
+JAK.38,SH,JAK.38-R01,Bulak Ringin - Kampung Rambutan,0,,JAK.38-R01_shp
+JAK.38,SH,JAK.38-R02,Kampung Rambutan - Bulak Ringin,1,,JAK.38-R02_shp
+JAK.39,SH,JAK.39-R01,Duren Sawit - Kalimalang,0,,JAK.39-R01_shp
+JAK.39,SH,JAK.39-R02,Kalimalang - Duren Sawit,1,,JAK.39-R02_shp
+JAK.40,SH,JAK.40-R02,Pulo Gebang - Harapan Baru via Rawa Kuning,1,,JAK.40-R02_shp
+JAK.40,SH,JAK.40-R03,Harapan Baru - Pulo Gebang Via Rawa Kuning,0,,JAK.40-R03_shp
+JAK.41,SH,JAK.41-R01,Kampung Melayu - Pulo Gadung,0,,JAK.41-R01_shp
+JAK.41,SH,JAK.41-R02,Pulo Gadung - Kampung Melayu,1,,JAK.41-R02_shp
+JAK.42,SH,JAK.42-R01,Kampung Melayu - Pondok Kelapa,0,,JAK.42-R01_shp
+JAK.42,SH,JAK.42-R02,Pondok Kelapa - Kampung Melayu,1,,JAK.42-R02_shp
+JAK.43B,SH,JAK.43B-R01,Tongtek - Tebet Eco Park (TEP) - Cililitan,0,,JAK.43B-R01_shp
+JAK.43B,SH,JAK.43B-R02,Cililitan - Tebet Eco Park (TEP) - Tongtek,1,,JAK.43B-R02_shp
+JAK.43C,SH,JAK.43C-R01,Sarana Jaya - Tebet Eco Park (TEP) - Stasiun Cawang,0,,JAK.43C-R01_shp
+JAK.43C,SH,JAK.43C-R02,Stasiun Cawang - Tebet Eco Park (TEP) - Sarana Jaya,1,,JAK.43C-R02_shp
+JAK.44,SH,JAK.44-R01,Andara - Stasiun Universitas Pancasila,0,,JAK.44-R01_shp
+JAK.44,SH,JAK.44-R02,Stasiun Universitas Pancasila - Andara,1,,JAK.44-R02_shp
+JAK.45,SH,JAK.45-R01,Lebak Bulus - Ragunan,0,,JAK.45-R01_shp
+JAK.45,SH,JAK.45-R02,Ragunan - Lebak Bulus,1,,JAK.45-R02_shp
+JAK.46,SH,JAK.46-R01,Jagakarsa - Pasar Minggu,0,,JAK.46-R01_shp
+JAK.46,SH,JAK.46-R02,Pasar Minggu - Jagakarsa,1,,JAK.46-R02_shp
+JAK.47,SH,JAK.47-R03,Ciganjur - Pasar Minggu via KB Ragunan,0,,z0ac
+JAK.47,SH,JAK.47-R04,Pasar Minggu - Ciganjur via KB Ragunan,1,,cjzm
+JAK.48A,SH,JAK.48A-R01,Stasiun Tebet - Rusun Karet Tengsin,0,,8nsx
+JAK.48A,SH,JAK.48A-R02,Rusun Karet Tengsin - Stasiun Tebet,1,,i7x0
+JAK.49,SH,JAK.49-R06,Cipulir - Lebak Bulus,0,,s8jt
+JAK.49,SH,JAK.49-R07,Lebak Bulus - Cipulir,1,,f10m
+JAK.50,SH,JAK.50-R01,Kalideres - Puri Kembangan,0,,JAK.50-R01_shp
+JAK.50,SH,JAK.50-R03,Puri Kembangan - Kalideres,1,,JAK.50-R03_shp
+JAK.51,SH,JAK.51-R01,Budi Luhur - Taman Kota,0,,JAK.51-R01_shp
+JAK.51,SH,JAK.51-R02,Taman Kota - Budi Luhur,1,,JAK.51-R02_shp
+JAK.52,SH,JAK.52-R06,Terminal Kalideres - Terminal Muara Angke,0,,izfu
+JAK.52,SH,JAK.52-R07,Terminal Muara Angke - Terminal Kalideres,1,,jm1x
+JAK.53,SH,JAK.53-R01,Grogol - Pos Pengumben via Slipi,0,,JAK.53-R01_shp
+JAK.53,SH,JAK.53-R02,Grogol - Pos Pengumben via Slipi,1,,JAK.53-R02_shp
+JAK.54,SH,JAK.54-R01,Benhil - Grogol,0,,JAK.54-R01_shp
+JAK.54,SH,JAK.54-R02,Grogol - Benhil,1,,JAK.54-R02_shp
+JAK.56,SH,JAK.56-R03,Srengseng - Grogol,1,,JAK.56-R03_shp
+JAK.56,SH,JAK.56-R04,Grogol - Srengseng,0,,JAK.56-R04_shp
+JAK.58,SH,JAK.58-R03,Cilincing - Rorotan,0,,JAK.58-R03_shp
+JAK.58,SH,JAK.58-R04,Rorotan - Cilincing,1,,JAK.58-R04_shp
+JAK.59,SH,JAK.59-R05,Rawamangun - Tanah Merah,1,,0n91
+JAK.59,SH,JAK.59-R06,Tanah Merah - Rawasengon,0,,wkgs
+JAK.60,SH,JAK.60-R03,Kelapa Gading - Rusun Kemayoran,0,,JAK.60-R03_shp
+JAK.60,SH,JAK.60-R04,Rusun Kemayoran - Kelapa Gading,1,,JAK.60-R04_shp
+JAK.61,SH,JAK.61-R01,Cempaka Putih - Pulo Gadung Via Kelapa Gading,0,,JAK.61-R01_shp
+JAK.61,SH,JAK.61-R02,Pulo Gadung - Cempaka Putih Via Kelapa Gading,1,,JAK.61-R02_shp
+JAK.64,SH,JAK.64-R01,Aseli - Lenteng Agung,0,,JAK.64-R01_shp
+JAK.64,SH,JAK.64-R02,Lenteng Agung - Aseli,1,,JAK.64-R02_shp
+JAK.71,SH,JAK.71-R01,Kampung Rambutan - Pinang Ranti,0,,JAK.71-R01_shp
+JAK.71,SH,JAK.71-R02,Pinang Ranti - Kampung Rambutan,1,,JAK.71-R02_shp
+JAK.72,SH,JAK.72-R01,Kampung Rambutan - Pasar Rebo Via Poncol,0,,JAK.72-R01_shp
+JAK.72,SH,JAK.72-R02,Pasar Rebo - Kampung Rambutan Via Poncol,1,,JAK.72-R02_shp
+JAK.73,SH,JAK.73-R03,St. LRT Harjamukti - Kramat Jati,0,,zjnw
+JAK.73,SH,JAK.73-R04,Kramat Jati - St. LRT Harjamukti,1,,68hy
+JAK.74,SH,JAK.74-R01,Cipinang Muara - Rawamangun,0,,JAK.74-R01_shp
+JAK.74,SH,JAK.74-R02,Rawamangun - Cipinang Muara,1,,JAK.74-R02_shp
+JAK.75,SH,JAK.75-R01,Cililitan - Kampung Pulo,0,,JAK.75-R01_shp
+JAK.75,SH,JAK.75-R03,Kampung Pulo - Cililitan,1,,3b9p
+JAK.76,SH,JAK.76-R01,Jln. Industri Raya - Perintis Kemerdekaan,0,,ce1y
+JAK.76,SH,JAK.76-R02,Perintis Kemerdekaan - Jln. Industri Raya,1,,aorq
+JAK.77,SH,JAK.77-R01,Jembatan Item - Tanjung Priok,0,,JAK.77-R01_shp
+JAK.77,SH,JAK.77-R02,Tanjung Priok - Jembatan Item,1,,JAK.77-R02_shp
+JAK.80,SH,JAK.80-R01,Rawa Buaya - Rawa Kompeni,0,,JAK.80-R01_shp
+JAK.80,SH,JAK.80-R03,Rawa Kompeni - Rawa Buaya,1,,JAK.80-R03_shp
+JAK.84,SH,JAK.84-R03,Kampung Melayu - Pangkalan Jati,0,,JAK.84-R03_shp
+JAK.84,SH,JAK.84-R04,Pangkalan Jati - Kampung Melayu,1,,ritj
+JAK.85,SH,JAK.85-R01,Bintara - Cipinang Indah,0,,JAK.85-R01_shp
+JAK.85,SH,JAK.85-R02,Cipinang Indah - Bintara,1,,JAK.85-R02_shp
+JAK.86,SH,JAK.86-R03,Term. Rawamangun - Term. Manggarai,0,,wuw9
+JAK.86,SH,JAK.86-R04,Term. Manggarai - Term. Rawamangun,1,,qyqk
+JAK.87,SH,JAK.87-R01,Terminal Tanjung Priok - Terminal Rawamangun,0,,t0mm
+JAK.87,SH,JAK.87-R02,Terminal Rawamangun - Terminal Tanjung Priok,1,,oukm
+JAK.88,SH,JAK.88-R01,Terminal Tanjung Priok - Ancol Barat,0,,JAK.88-R01_shp
+JAK.88,SH,JAK.88-R02,Ancol Barat - Terminal Tanjung Priok,1,,JAK.88-R02_shp
+JAK.89,SH,JAK.89-R01,Terminal Tanjung Priok - Taman Kota Intan,0,,ffuw
+JAK.89,SH,JAK.89-R02,Taman Kota Intan - Terminal Tanjung Priok,1,,uatj
+JAK.90,SH,JAK.90-R01,Terminal Tanjung Priok - Rusun Kemayoran,0,,uivq
+JAK.90,SH,JAK.90-R02,Rusun Kemayoran - Terminal Tanjung Priok,1,,8exo
+JAK.93,SH,JAK.93-R01,Jeruk Purut - Kebayoran Lama,0,,hq9b
+JAK.93,SH,JAK.93-R02,Kebayoran Lama - Jeruk Purut,1,,u9a9
+JAK.95,SH,JAK.95-R01,Term. Lebak Bulus - Term. Pasar Minggu,0,,ojc9
+JAK.95,SH,JAK.95-R02,Term. Pasar Minggu - Term. Lebak Bulus,1,,qlek
+JAK.98,SH,JAK.98-R01,Term. Kampung Rambutan - Munjul,0,,7ako
+JAK.98,SH,JAK.98-R02,Munjul - Term. Kampung Rambutan,1,,ua2b
+JAK.99,SH,JAK.99-R01,Term. Pulo Gadung - Lampiri,0,,JAK.99-R01_shp
+JAK.99,SH,JAK.99-R02,Lampiri - Term. Pulo Gadung,1,,JAK.99-R02_shp
+L13E,SH,L13E-R03,Puri Beta - Flyover Kuningan (Express),0,,L13E-R03_shp
+L13E,SH,L13E-R08,Flyover Kuningan - Puri Beta (Express),1,,0tbs
+M10,SH,M10-R01,PGC - Tanjung Priok,0,,M10-R01_shp
+M10,SH,M10-R02,Tanjung Priok - PGC,1,,M10-R02_shp
+M11,SH,M11-R03,Pulo Gebang - Kampung Melayu,0,,ulrj
+M11,SH,M11-R04,Kampung Melayu - Pulo Gebang,1,,fmil
+M12,SH,M12-R02,Penjaringan - Sunter Boulevard Barat,1,,M12-R02_shp
+M12,SH,M12-R03,Sunter Boulevard Barat - Penjaringan,0,,M12-R01_shp
+M13,SH,M13-R01,Puri Beta 2 - Tegal Mampang,0,,M13-R01_shp
+M13,SH,M13-R02,Tegal Mampang - Puri Beta 2,1,,M13-R02_shp
+M14,SH,M14-R01,Jakarta International Stadium - Senen,0,,iroi
+M14,SH,M14-R02,Senen - Jakarta International Stadium,1,,aajg
+M1,SH,M1-R05,Blok M - Kota via Koridor 9,0,,2dmc
+M1,SH,M1-R06,Kota - Blok M via Koridor 9,1,,1d11
+M2,SH,M2-R03,Pulo Gadung - Monas,1,,vcut
+M2,SH,M2-R04,Monas - Pulo Gadung,0,,0nuu
+M3,SH,M3-R07,Kalideres - Monas via Veteran,0,,qtlc
+M3,SH,M3-R08,Monas - Kalideres via Veteran,1,,paxl
+M4,SH,M4-R05,Pulo Gadung - Galunggung,0,,3nol
+M4,SH,M4-R06,Galunggung - Pulo Gadung,1,,1jly
+M5,SH,M5-R01,Cililitan - Ancol,0,,M5-R01_shp
+M5,SH,M5-R02,Ancol - PGC,1,,M5-R02_shp
+M6,SH,M6-R05,Ragunan - Galunggung,0,,zwyz
+M6,SH,M6-R06,Galunggung - Ragunan,1,,kqjq
+M7,SH,M7-R05,Kampung Rambutan - Kampung Melayu,0,,3agi
+M7,SH,M7-R06,Kampung Melayu - Kampung Rambutan,1,,lai5
+M8,SH,M8-R04,Pasar Baru - Lebak Bulus,1,,zt0f
+M8,SH,M8-R05,Lebak Bulus - Pasar Baru,0,,7qxz
+M9,SH,M9-R01,Pinang Ranti - Pluit,0,,M9-R01_shp
+M9,SH,M9-R02,Pluit - Pinang Ranti,1,,M9-R02_shp
+S11,SH,S11-R05,BSD - Jelambar,0,,c9wg
+S11,SH,S11-R06,Jelambar - BSD,1,,cecm
+S12,HK,S12-R05,Term. BSD - Fatmawati,0,,rs5z
+S12,HK,S12-R06,Fatmawati - Term. BSD,1,,mynx
+S13,HK,S13-R01,Summarecon Serpong - Tomang Raya,0,,4fxq
+S13,HK,S13-R02,Tomang Raya - Summarecon Serpong,1,,y6s4
+S14,HK,S14-R01,Summarecon Serpong - Lebak Bulus,0,,cipn
+S14,HK,S14-R02,Lebak Bulus - Summarecon Serpong,1,,pgvd
+S21,SH,S21-R03,Ciputat - Kejaksaan Agung,0,,S21-R03_shp
+S21,SH,S21-R04,Kejaksaan Agung - Ciputat,1,,S21-R04_shp
+S22,SH,S22-R01,Ciputat - Kampung Rambutan,0,,S22-R01_shp
+S22,SH,S22-R02,Kampung Rambutan - Ciputat,1,,S22-R02_shp
+S31,HK,S31-R01,Bintaro - Fatmawati,0,,S31-R01_shp
+S31,HK,S31-R02,Fatmawati - Bintaro,1,,S31-R02_shp
+SH1,SH,SH1-R01,Kalideres - Perkantoran Soekarno-Hatta,0,,g14t
+SH1,SH,SH1-R02,Perkantoran Soekarno-Hatta - Kalideres,1,,phtm
+T11,SH,T11-R08,Poris Plawad - Petamburan,0,,lbjj
+T11,SH,T11-R09,Petamburan - Poris Plawad,1,,5oh5
+T12,HK,T12-R02,Juanda - Poris Plawad,1,,T12-R02_shp
+T12,HK,T12-R03,Poris Plawad - Juanda,0,,p1qd
+6W,SH,6W-R03,Duren Tiga - Blok M via Bangka Raya,0,,lugw
+6W,SH,6W-R04,Blok M - Duren Tiga via Bangka Raya,1,,o46s
+10M,SH,10M-R01,Pulo Gadung - Walikota Jakarta Utara via Tipar Cakung,0,,e8q1
+10M,SH,10M-R02,Walikota Jakarta Utara - Pulo Gadung via Tipar Cakung,1,,3ai8
+3D,SH,3D-R03,Taman Kota - Penjaringan via Tubagus Angke,0,,gfcj
+3D,SH,3D-R04,Penjaringan - Taman Kota via Tubagus Angke,1,,zk01

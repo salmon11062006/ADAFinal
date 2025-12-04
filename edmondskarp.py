@@ -60,7 +60,7 @@ class Graph:
 
         return max_flow
 
-
+'''
 # Example usage:
 if __name__ == "__main__":
     g = Graph(6)
@@ -82,3 +82,4 @@ if __name__ == "__main__":
     sink = 5
 
     print("The maximum possible flow is:", g.edmonds_karp(source, sink))
+'''
