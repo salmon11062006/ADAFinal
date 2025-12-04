@@ -60,6 +60,9 @@ class Graph:
 
         return max_flow
     
+'''
+# Example usage:
+
 g = Graph(6)
 vertex_names = ['s', 'v1', 'v2', 'v3', 'v4', 't']
 for i, name in enumerate(vertex_names):
@@ -79,3 +82,4 @@ source = 0
 sink = 5
 
 print("The maximum possible flow is:", g.edmonds_karp(source, sink))
+'''
