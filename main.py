@@ -202,82 +202,62 @@ print("="*60)
 
 max_flow_results = []  # Store results for later comparison
 
-# Example 1: Between top two hubs
-if len(top_hubs) >= 2:
-    source_idx = top_hubs[0][0]
-    sink_idx = top_hubs[1][0]
-    
-    source_name = stops[stops['stop_id'] == idx_to_stop[source_idx]].iloc[0]['stop_name']
-    sink_name = stops[stops['stop_id'] == idx_to_stop[sink_idx]].iloc[0]['stop_name']
-    
-    print(f"\nAnalysis 1: {source_name} → {sink_name}")
-    print("-" * 60)
-    
-    # Create a copy of the graph for this analysis
-    # (Edmonds-Karp modifies the graph, so we need a fresh copy)
-    g1 = Graph(n)
-    for idx, stop_id in idx_to_stop.items():
-        stop_name = stops[stops['stop_id'] == stop_id].iloc[0]['stop_name']
-        g1.add_vertex_data(idx, stop_name)
-    
-    for u in capacity_matrix:
-        for v in capacity_matrix[u]:
-            g1.add_edge(u, v, capacity_matrix[u][v])
-    
-    # Run Edmonds-Karp max flow algorithm
-    max_flow_1 = g1.edmonds_karp(source_idx, sink_idx)
-    print(f"\nMaximum Flow Capacity: {max_flow_1:,.0f} passengers/hour (peak)")
-    print(f"   (Based on {BUS_CAPACITY} passengers/bus × peak frequency)")
-    
-    # Convert to daily capacity (operating hours: 5:00 - 22:00 = 17 hours)
-    max_flow_daily_1 = max_flow_1 * OPERATING_HOURS
-    print(f"\nEstimated Daily Capacity: {max_flow_daily_1:,.0f} passengers/day")
-    print(f"   (Assuming {OPERATING_HOURS} operating hours: 5:00 - 22:00)")
-    
-    max_flow_results.append({
-        'source': source_name,
-        'sink': sink_name,
-        'hourly': max_flow_1,
-        'daily': max_flow_daily_1
-    })
+# Analyze connectivity between ALL top hubs (comprehensive system analysis)
+print("\nAnalyzing connectivity between top transit hubs...")
+print("This reveals the overall capacity of the corridor network (1-13)")
+print()
 
-# Example 2: Between 3rd and 4th hubs
-if len(top_hubs) >= 4:
-    source_idx = top_hubs[2][0]
-    sink_idx = top_hubs[3][0]
-    
-    source_name = stops[stops['stop_id'] == idx_to_stop[source_idx]].iloc[0]['stop_name']
-    sink_name = stops[stops['stop_id'] == idx_to_stop[sink_idx]].iloc[0]['stop_name']
-    
-    print(f"\n\nAnalysis 2: {source_name} → {sink_name}")
-    print("-" * 60)
-    
-    # Create a copy of the graph for this analysis
-    g2 = Graph(n)
-    for idx, stop_id in idx_to_stop.items():
-        stop_name = stops[stops['stop_id'] == stop_id].iloc[0]['stop_name']
-        g2.add_vertex_data(idx, stop_name)
-    
-    for u in capacity_matrix:
-        for v in capacity_matrix[u]:
-            g2.add_edge(u, v, capacity_matrix[u][v])
-    
-    # Run Edmonds-Karp max flow algorithm
-    max_flow_2 = g2.edmonds_karp(source_idx, sink_idx)
-    print(f"\nMaximum Flow Capacity: {max_flow_2:,.0f} passengers/hour (peak)")
-    print(f"   (Based on {BUS_CAPACITY} passengers/bus × peak frequency)")
-    
-    # Convert to daily capacity
-    max_flow_daily_2 = max_flow_2 * OPERATING_HOURS
-    print(f"\nEstimated Daily Capacity: {max_flow_daily_2:,.0f} passengers/day")
-    print(f"   (Assuming {OPERATING_HOURS} operating hours: 5:00 - 22:00)")
-    
-    max_flow_results.append({
-        'source': source_name,
-        'sink': sink_name,
-        'hourly': max_flow_2,
-        'daily': max_flow_daily_2
-    })
+# Run max flow for all pairs of top hubs to get comprehensive network view
+num_hubs_to_analyze = min(5, len(top_hubs))  # Analyze top 5 hubs
+
+for i in range(num_hubs_to_analyze):
+    for j in range(i + 1, num_hubs_to_analyze):
+        source_idx = top_hubs[i][0]
+        sink_idx = top_hubs[j][0]
+        
+        source_name = stops[stops['stop_id'] == idx_to_stop[source_idx]].iloc[0]['stop_name']
+        sink_name = stops[stops['stop_id'] == idx_to_stop[sink_idx]].iloc[0]['stop_name']
+        
+        # Create a copy of the graph for this analysis
+        g_temp = Graph(n)
+        for idx, stop_id in idx_to_stop.items():
+            stop_name = stops[stops['stop_id'] == stop_id].iloc[0]['stop_name']
+            g_temp.add_vertex_data(idx, stop_name)
+        
+        for u in capacity_matrix:
+            for v in capacity_matrix[u]:
+                g_temp.add_edge(u, v, capacity_matrix[u][v])
+        
+        # Run Edmonds-Karp max flow algorithm
+        max_flow_hourly = g_temp.edmonds_karp(source_idx, sink_idx)
+        max_flow_daily = max_flow_hourly * OPERATING_HOURS
+        
+        max_flow_results.append({
+            'source': source_name,
+            'sink': sink_name,
+            'hourly': max_flow_hourly,
+            'daily': max_flow_daily
+        })
+
+# Display summary of key connections
+print(f"Analyzed {len(max_flow_results)} hub-to-hub connections")
+print("\nTop 5 Highest Capacity Connections:")
+print("-" * 80)
+print(f"{'From':<25} {'To':<25} {'Daily Capacity':<20}")
+print("-" * 80)
+
+sorted_results = sorted(max_flow_results, key=lambda x: x['daily'], reverse=True)[:5]
+for result in sorted_results:
+    print(f"{result['source']:<25} {result['sink']:<25} {result['daily']:>15,.0f}")
+
+print("\nBottom 5 Lowest Capacity Connections (Potential Bottlenecks):")
+print("-" * 80)
+print(f"{'From':<25} {'To':<25} {'Daily Capacity':<20}")
+print("-" * 80)
+
+bottleneck_results = sorted(max_flow_results, key=lambda x: x['daily'])[:5]
+for result in bottleneck_results:
+    print(f"{result['source']:<25} {result['sink']:<25} {result['daily']:>15,.0f}")
 
 # ============================================================================
 # SECTION 6: Collect actual passenger data for comparison
@@ -294,80 +274,98 @@ print("MAX FLOW INSIGHTS - WHAT THE ALGORITHM REVEALS")
 print("="*60)
 
 if max_flow_results:
-    print("\n1. NETWORK CONNECTIVITY ANALYSIS:")
+    print("\n1. OVERALL SYSTEM CAPACITY (Corridors 1-13):")
     print("-" * 60)
-    print("Max flow shows the ACTUAL throughput between major hubs,")
-    print("accounting for network constraints and bottlenecks.")
+    print("Max flow analysis across ALL major hub connections")
+    print("Shows the comprehensive capacity of the corridor network")
     print()
     
-    for i, result in enumerate(max_flow_results, 1):
-        print(f"Connection {i}: {result['source']} → {result['sink']}")
-        print(f"   Max throughput: {result['daily']:,.0f} passengers/day")
-        
-        # Compare with total system capacity
-        network_efficiency = (result['daily'] / total_route_capacity) * 100 if total_route_capacity > 0 else 0
-        print(f"   Network efficiency: {network_efficiency:.1f}% of total system capacity")
-        
-        # Check if this connection is a bottleneck
-        if result['daily'] < total_route_capacity * 0.3:
-            print(f"   ⚠️  POTENTIAL BOTTLENECK - Low throughput relative to system capacity")
+    # Calculate system-wide statistics
+    avg_max_flow_daily = sum(r['daily'] for r in max_flow_results) / len(max_flow_results)
+    min_max_flow_daily = min(r['daily'] for r in max_flow_results)
+    max_max_flow_daily = max(r['daily'] for r in max_flow_results)
+    
+    print(f"Total hub connections analyzed: {len(max_flow_results)}")
+    print(f"Average connection capacity:    {avg_max_flow_daily:,.0f} passengers/day")
+    print(f"Minimum connection capacity:    {min_max_flow_daily:,.0f} passengers/day")
+    print(f"Maximum connection capacity:    {max_max_flow_daily:,.0f} passengers/day")
+    print()
+    
+    # System capacity variance indicates network balance
+    variance = sum((r['daily'] - avg_max_flow_daily)**2 for r in max_flow_results) / len(max_flow_results)
+    std_dev = variance ** 0.5
+    coefficient_variation = (std_dev / avg_max_flow_daily) * 100 if avg_max_flow_daily > 0 else 0
+    
+    print(f"Capacity variation (CV):        {coefficient_variation:.1f}%")
+    if coefficient_variation > 50:
+        print("   ⚠️  HIGH VARIATION - Network has significant imbalances")
+    elif coefficient_variation < 25:
+        print("   ✓ LOW VARIATION - Network is well-balanced")
+    else:
+        print("   ✓ MODERATE VARIATION - Acceptable network balance")
+    
+    print("\n2. NETWORK CONNECTIVITY QUALITY:")
+    print("-" * 60)
+    
+    # Compare with total system capacity
+    network_efficiency = (avg_max_flow_daily / total_route_capacity) * 100 if total_route_capacity > 0 else 0
+    print(f"Network efficiency:             {network_efficiency:.1f}%")
+    print(f"   (Average max flow vs total theoretical capacity)")
+    print()
+    
+    if network_efficiency < 30:
+        print("⚠️  LOW NETWORK EFFICIENCY - Significant bottlenecks exist")
+        print("   - Network structure severely limits passenger flow")
+        print("   - Many hubs poorly connected despite high individual route capacity")
+        print("   - Recommend: Add express routes, improve connectivity")
+    elif network_efficiency < 60:
+        print("⚠️  MODERATE NETWORK EFFICIENCY - Some bottlenecks present")
+        print("   - Network could be better connected")
+        print("   - Recommend: Identify and strengthen weak connections")
+    else:
+        print("✓ HIGH NETWORK EFFICIENCY - Good connectivity")
+        print("   - Network structure supports good passenger flow")
+        print("   - Multiple alternative paths available")
+    
+    print("\n3. SYSTEM UTILIZATION vs CAPACITY:")
+    print("-" * 60)
+    print(f"Total actual daily passengers:  {total_actual_passengers:,.0f}")
+    print(f"Total system capacity (routes): {total_route_capacity:,.0f}")
+    print(f"Average hub-hub max flow:       {avg_max_flow_daily:,.0f}")
+    print()
+    
+    # System utilization
+    system_utilization = (total_actual_passengers / total_route_capacity) * 100 if total_route_capacity > 0 else 0
+    print(f"Overall system utilization:     {system_utilization:.1f}%")
+    
+    if system_utilization > 75:
+        print("   ⚠️  HIGH UTILIZATION - System near capacity")
+    elif system_utilization < 40:
+        print("   ✓ LOW UTILIZATION - Significant spare capacity")
+    else:
+        print("   ✓ MODERATE UTILIZATION - Healthy operating range")
+    print()
+    
+    print("\n4. BOTTLENECK IDENTIFICATION:")
+    print("-" * 60)
+    
+    # Identify critical bottlenecks (connections with very low capacity)
+    bottleneck_threshold = avg_max_flow_daily * 0.5  # 50% below average
+    critical_bottlenecks = [r for r in max_flow_results if r['daily'] < bottleneck_threshold]
+    
+    if critical_bottlenecks:
+        print(f"Found {len(critical_bottlenecks)} critical bottleneck connections:")
+        print(f"   (Capacity < {bottleneck_threshold:,.0f} passengers/day)")
         print()
-    
-    print("\n2. KEY INSIGHTS FROM MAX FLOW ALGORITHM:")
-    print("-" * 60)
-    print("✓ Max Flow reveals BOTTLENECKS:")
-    print("  - If max flow << sum of route capacities → bottleneck exists")
-    print("  - Shows realistic passenger movement between major hubs")
-    print("  - Identifies weakest links in the network")
-    print()
-    print("✓ Network Analysis:")
-    print("  - High max flow = Good connectivity between hubs")
-    print("  - Low max flow = Network constraints limiting passenger movement")
-    print("  - Multiple paths increase resilience and capacity")
-    print()
-    
-    print("\n3. NETWORK CAPACITY vs ACTUAL USAGE:")
-    print("-" * 60)
-    print(f"Total actual daily passengers:   {total_actual_passengers:,.0f}")
-    print(f"Total system capacity (daily):   {total_route_capacity:,.0f}")
-    
-    if max_flow_results:
-        avg_max_flow = sum(r['daily'] for r in max_flow_results) / len(max_flow_results)
-        print(f"Average max flow (hub-to-hub):   {avg_max_flow:,.0f}")
+        for b in critical_bottlenecks[:3]:  # Show top 3 worst
+            print(f"   • {b['source']} ↔ {b['sink']}: {b['daily']:,.0f} passengers/day")
         print()
-        
-        # Calculate network stress
-        if avg_max_flow > 0:
-            network_stress = (total_actual_passengers / total_route_capacity) * 100
-            print(f"Overall system utilization:      {network_stress:.1f}%")
-            
-            # Network efficiency: How well does max flow compare to theoretical capacity?
-            max_flow_efficiency = (avg_max_flow / total_route_capacity) * 100
-            print(f"Network efficiency (max flow):   {max_flow_efficiency:.1f}%")
-            print()
-            
-            if network_stress > 70:
-                print("⚠️  HIGH SYSTEM UTILIZATION - Recommendations:")
-                print("   - System approaching capacity limits")
-                print("   - Consider adding routes or increasing frequency")
-                print("   - Bottlenecks may be limiting passenger flow")
-            elif network_stress < 30:
-                print("✓ LOW SYSTEM UTILIZATION - System has spare capacity")
-                print("   - Could handle significant demand increases")
-                print("   - May indicate inefficient route planning")
-            else:
-                print("✓ MODERATE UTILIZATION - System operating within range")
-            print()
-            
-            # Bottleneck detection
-            if max_flow_efficiency < 50:
-                print("⚠️  NETWORK BOTTLENECK DETECTED:")
-                print("   - Max flow significantly lower than theoretical capacity")
-                print("   - Network structure limiting passenger throughput")
-                print("   - Consider adding direct connections between major hubs")
-            else:
-                print("✓ GOOD NETWORK CONNECTIVITY:")
-                print("   - Max flow indicates efficient network structure")
-                print("   - Multiple paths available for passenger flow")
+        print("⚠️  RECOMMENDATIONS:")
+        print("   - These connections severely limit network capacity")
+        print("   - Priority areas for adding routes or increasing frequency")
+        print("   - Consider express services between these hubs")
+    else:
+        print("✓ No critical bottlenecks detected")
+        print("   All major connections have reasonable capacity")
 
 
