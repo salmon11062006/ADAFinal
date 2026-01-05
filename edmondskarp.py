@@ -55,8 +55,8 @@ class Graph:
                 v = parent[v]
             path.append(source)
             path.reverse()
-            path_names = [self.vertex_data[node] for node in path]
-            print("path: ", " -> ".join(path_names), ", flow: ", path_flow)
+            # path_names = [self.vertex_data[node] for node in path]
+            # print("path: ", " -> ".join(path_names), ", flow: ", path_flow)
 
         return max_flow
 

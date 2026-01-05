@@ -180,7 +180,6 @@ class StopNetwork:
         # Cache the result
         self._trip_cache[cache_key] = all_departures
         return all_departures
-        return all_departures
     
     def print_trip_with_frequencies(self, trip_id, time_window_start=None, time_window_end=None):
         """
@@ -376,31 +375,46 @@ class StopNetwork:
         return all_nodes
     
     # EDGES
-    def build_edges_all_trips(self, bus_capacity, time_window_start, time_window_end):
+    def build_edges_all_trips(self, bus_capacity, time_window_start, time_window_end, min_transfer_time=120, max_transfer_time=1800):
         """
         Build edges for ALL trips in the loaded data (e.g., all BRT lines 1-14).
-        Edge = (from_node, to_node, capacity)
+        This includes BOTH:
+        1. Bus edges: connections between consecutive stops on the same bus
+        2. Transfer edges: waiting at same stop to catch different bus
         
         Args:
             bus_capacity (int): Capacity per bus
             time_window_start (str): Start time window
             time_window_end (str): End time window
+            min_transfer_time (int): Minimum transfer time in seconds (default 120s = 2min)
+            max_transfer_time (int): Maximum transfer time in seconds (default 1800s = 30min)
             
         Returns:
             list: List of edge dictionaries
         """
         all_edges = []
+        all_nodes = []
         
         # Get all unique trip_ids from frequencies
         trip_ids = self.frequencies['trip_id'].unique()
         print(f"Building edges for {len(trip_ids)} trips...")
         
+        # STEP 1: Build bus edges
         # Use tqdm for progress bar
-        for trip_id in tqdm(trip_ids, desc="Processing trips", unit="trip"):
+        for trip_id in tqdm(trip_ids, desc="Building bus edges", unit="trip"):
             departures = self.get_trip_with_frequencies(trip_id, time_window_start, time_window_end)
             
             # For each bus departure, create edges between consecutive stops
             for departure_df in departures:
+                # Store nodes for transfer edge calculation
+                for _, row in departure_df.iterrows():
+                    all_nodes.append({
+                        'stop_id': row['stop_id'],
+                        'stop_name': row['stop_name'],
+                        'arrival_time': row['arrival_time'],
+                        'trip_id': trip_id
+                    })
+                
                 for i in range(len(departure_df) - 1):
                     current_stop = departure_df.iloc[i]
                     next_stop = departure_df.iloc[i + 1]
@@ -418,24 +432,71 @@ class StopNetwork:
                     }
                     all_edges.append(edge)
         
+        bus_edge_count = len(all_edges)
+        
+        # STEP 2: Build transfer edges at same stops
+        print(f"Building transfer edges...")
+        nodes_by_stop = {}
+        for node in all_nodes:
+            stop_id = node['stop_id']
+            if stop_id not in nodes_by_stop:
+                nodes_by_stop[stop_id] = []
+            nodes_by_stop[stop_id].append(node)
+        
+        # For each stop, create transfer edges between different trips
+        for stop_id, stop_nodes in tqdm(nodes_by_stop.items(), desc="Building transfers"):
+            stop_nodes_sorted = sorted(stop_nodes, key=lambda x: self._time_to_seconds(x['arrival_time']))
+            
+            for i, from_node in enumerate(stop_nodes_sorted):
+                from_time_sec = self._time_to_seconds(from_node['arrival_time'])
+                
+                for j in range(i+1, len(stop_nodes_sorted)):
+                    to_node = stop_nodes_sorted[j]
+                    to_time_sec = self._time_to_seconds(to_node['arrival_time'])
+                    
+                    time_diff = to_time_sec - from_time_sec
+                    
+                    # Create transfer edge if different trips and within time window
+                    if (from_node['trip_id'] != to_node['trip_id'] and
+                        min_transfer_time <= time_diff <= max_transfer_time):
+                        
+                        all_edges.append({
+                            'from_stop': from_node['stop_id'],
+                            'from_name': from_node['stop_name'],
+                            'from_time': from_node['arrival_time'],
+                            'to_stop': to_node['stop_id'],
+                            'to_name': to_node['stop_name'],
+                            'to_time': to_node['arrival_time'],
+                            'capacity': 999999,  # High capacity - transfers not bus-limited
+                            'trip_id': f"{from_node['trip_id']}→{to_node['trip_id']}",
+                            'type': 'transfer'
+                        })
+        
+        transfer_edge_count = len(all_edges) - bus_edge_count
+        print(f"Created {bus_edge_count} bus edges + {transfer_edge_count} transfer edges = {len(all_edges)} total")
+        
         print(f"Created {len(all_edges)} edges")
         return all_edges
     
     # SUMMARY
-    def print_network_summary_all_trips(self, bus_capacity, time_window_start, time_window_end):
+    def print_network_summary_all_trips(self, bus_capacity, time_window_start, time_window_end, min_transfer_time=120, max_transfer_time=1800):
         """
-        Print summary for the FULL network (all loaded trips).
+        Print summary of the full network.
         
         Args:
             bus_capacity (int): Bus capacity for edges
             time_window_start (str): Start time window
             time_window_end (str): End time window
+            min_transfer_time (int): Minimum transfer time in seconds (default 120s = 2min)
+            max_transfer_time (int): Maximum transfer time in seconds (default 1800s = 30min)
         """
         nodes = self.build_nodes_all_trips(time_window_start, time_window_end)
-        edges = self.build_edges_all_trips(bus_capacity, time_window_start, time_window_end)
+        edges = self.build_edges_all_trips(bus_capacity, time_window_start, time_window_end, min_transfer_time, max_transfer_time)
         
         trip_count = len(self.frequencies['trip_id'].unique())
         unique_stops = len(set([node['stop_id'] for node in nodes]))
+        bus_edges = sum(1 for e in edges if e.get('type') == 'bus')
+        transfer_edges = sum(1 for e in edges if e.get('type') == 'transfer')
         
         print(f"\n{'='*80}")
         print(f"FULL NETWORK SUMMARY (All BRT Routes)")
@@ -449,12 +510,95 @@ class StopNetwork:
         print(f"Node Format: (stop_id, time)")
         print(f"\n{'-'*80}")
         print(f"Total Edges: {len(edges)}")
+        print(f"  - Bus edges: {bus_edges} (riding on a bus)")
+        print(f"  - Transfer edges: {transfer_edges} (waiting at stop for another bus)")
         print(f"Edge Format: (from_stop, time1) → (to_stop, time2)")
-        print(f"Edge Capacity: {bus_capacity} passengers per edge")
         print(f"{'='*80}")
+    
+    # STEP 3: Convert to Graph for Edmonds-Karp
+    def build_flow_graph(self, source_stop, dest_stop, bus_capacity, time_window_start, time_window_end, min_transfer_time=120, max_transfer_time=1800):
+        """
+        Build a flow network graph for Edmonds-Karp algorithm.
+        
+        Args:
+            source_stop (str): Source stop ID (e.g., 'P00017' for Blok M)
+            dest_stop (str): Destination stop ID (e.g., 'G00060' for Kali Besar)
+            bus_capacity (int): Capacity per bus
+            time_window_start (str): Start time window
+            time_window_end (str): End time window
+            min_transfer_time (int): Minimum transfer time in seconds (default 120s = 2min)
+            max_transfer_time (int): Maximum transfer time in seconds (default 1800s = 30min)
+            
+        Returns:
+            tuple: (Graph object, node_to_index dict, index_to_node dict, source_idx, sink_idx)
+        """
+        from edmondskarp import Graph
+        
+        print(f"\nBuilding flow graph from {source_stop} to {dest_stop}...")
+        
+        # Get all nodes and edges
+        nodes = self.build_nodes_all_trips(time_window_start, time_window_end)
+        edges = self.build_edges_all_trips(bus_capacity, time_window_start, time_window_end, min_transfer_time, max_transfer_time)
+        
+        # Create unique node identifiers: (stop_id, time)
+        unique_nodes = set()
+        for node in nodes:
+            unique_nodes.add((node['stop_id'], node['arrival_time']))
+        
+        # Add super source and super sink
+        unique_nodes.add(('SOURCE', '00:00:00'))
+        unique_nodes.add(('SINK', '23:59:59'))
+        
+        unique_nodes_list = list(unique_nodes)
+        node_count = len(unique_nodes_list)
+        
+        # Create mapping: node -> index
+        node_to_index = {node: idx for idx, node in enumerate(unique_nodes_list)}
+        index_to_node = {idx: node for node, idx in node_to_index.items()}
+        
+        # Create graph
+        graph = Graph(node_count)
+        
+        # Add vertex labels
+        for idx, (stop_id, time) in index_to_node.items():
+            stop_name = self.stop_info.get(stop_id, {}).get('name', stop_id)
+            graph.add_vertex_data(idx, f"{stop_name}@{time}")
+        
+        # Add edges from our network
+        for edge in edges:
+            from_node = (edge['from_stop'], edge['from_time'])
+            to_node = (edge['to_stop'], edge['to_time'])
+            
+            if from_node in node_to_index and to_node in node_to_index:
+                from_idx = node_to_index[from_node]
+                to_idx = node_to_index[to_node]
+                graph.add_edge(from_idx, to_idx, edge['capacity'])
+        
+        # Connect super source to all nodes at source_stop
+        source_idx = node_to_index[('SOURCE', '00:00:00')]
+        for node in nodes:
+            if node['stop_id'] == source_stop:
+                node_key = (node['stop_id'], node['arrival_time'])
+                if node_key in node_to_index:
+                    target_idx = node_to_index[node_key]
+                    graph.add_edge(source_idx, target_idx, float('inf'))
+        
+        # Connect all nodes at dest_stop to super sink
+        sink_idx = node_to_index[('SINK', '23:59:59')]
+        for node in nodes:
+            if node['stop_id'] == dest_stop:
+                node_key = (node['stop_id'], node['arrival_time'])
+                if node_key in node_to_index:
+                    from_idx = node_to_index[node_key]
+                    graph.add_edge(from_idx, sink_idx, float('inf'))
+        
+        print(f"Graph created with {node_count} nodes and {len(edges)} edges")
+        
+        return graph, node_to_index, index_to_node, source_idx, sink_idx
+
 
 if __name__ == "__main__":
-    # Example usage
+    # Example usage - just build the network
     network = StopNetwork(gtfs_path='gtfs/')
     
     # Filter for major BRT lines 1-14
@@ -465,9 +609,12 @@ if __name__ == "__main__":
     # IMPORTANT PARAMETERS!
     # Time window for analysis
     time_start = '06:00:00'  # Morning peak start
-    time_end = '09:00:00'    # Morning peak end
+    time_end = '07:00:00'    # Morning peak end (reduced to 1 hour for demo)
     # Bus capacity assumption for weights on edges
     bus_capacity = 85
+    # Transfer constraints
+    min_transfer_time = 120   # Minimum 2 minutes to transfer (120 seconds)
+    max_transfer_time = 1800  # Maximum 30 minutes wait (1800 seconds)
     
     # ANALYZING SINGLE TRIP
     print("\n" + "="*80)
@@ -476,11 +623,12 @@ if __name__ == "__main__":
     trip_id = '1-R07'
     print(f"\nAnalyzing trip: {trip_id}")
     network.print_network_summary(trip_id, bus_capacity, time_start, time_end)
+
+    network.visualize_nodes(trip_id, time_start, time_end)
+    network.visualize_edges(trip_id, bus_capacity, time_start, time_end)
     
     # ANALYZING A NETWORK (in this case only for major BRT lines 1-14)
     print("\n\n" + "="*80)
     print("OPTION 2: Analyze FULL BRT Network (Routes 1-14)")
     print("="*80)
-    network.print_network_summary_all_trips(bus_capacity, time_start, time_end)
-
-        
+    network.print_network_summary_all_trips(bus_capacity, time_start, time_end, min_transfer_time, max_transfer_time)
