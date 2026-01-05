@@ -28,7 +28,7 @@ def main():
     max_transfer_time = 1800  # Maximum 30 minutes wait (1800 seconds)
     
     # Source and destination stops
-    source_stop_id = 'G00060'  # Kali Besar
+    source_stop_id = 'G00106' # Pasar Senen (example transit route)
     dest_stop_id = 'P00017'  # Blok M
 
     # ================================================
