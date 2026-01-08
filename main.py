@@ -55,7 +55,11 @@ def main():
     print(f"\nNetwork: {source_name} → {dest_name}")
     print(f"Nodes: {graph.size}")
     
-    
+    # IF Edmonds-Karp is not runned: return dummy values
+    max_flow_ek = 0
+    ek_time = 1.0
+
+    '''
     # ========== RUN EDMONDS-KARP ==========
     print("\n" + "="*80)
     print("1. EDMONDS-KARP ALGORITHM")
@@ -80,7 +84,7 @@ def main():
     print(f"\nEdmonds-Karp Result:")
     print(f"  Max Flow: {max_flow_ek:,} passengers")
     print(f"  Runtime: {ek_time:.4f} seconds")
-    
+    '''
     # ========== RUN DINIC ==========
     print("\n" + "="*80)
     print("2. DINIC'S ALGORITHM")
@@ -108,7 +112,7 @@ def main():
     print(f"\nDinic's Result:")
     print(f"  Max Flow: {max_flow_dinic:,} passengers")
     print(f"  Runtime: {dinic_time:.4f} seconds")
-    
+
     # ========== COMPARISON ==========
     print("\n" + "="*80)
     print("COMPARISON")
@@ -138,8 +142,6 @@ def main():
     print(f"  Dinic:        O(V²·E) ≈ {nodes * nodes * edges:,} operations")
     
     print("="*80)
-    
-    return max_flow_ek
 
 
 if __name__ == "__main__":
