@@ -17,7 +17,7 @@ def main():
     # ========== CONFIGURE PARAMETERS HERE ==========
     
     # Time window for analysis
-    time_start = '06:00:00'  # Morning peak start
+    time_start = '05:00:00'  # Morning peak start
     time_end = '07:00:00'    # Morning peak end
     
     # Bus capacity
@@ -28,8 +28,8 @@ def main():
     max_transfer_time = 1800  # Maximum 30 minutes wait (1800 seconds)
     
     # Source and destination stops
-    source_stop_id = 'G00106' # Pasar Senen (example transit route)
-    dest_stop_id = 'P00017'  # Blok M
+    source_stop_id = 'G00359' 
+    dest_stop_id = 'G00042' 
 
     # ================================================
     
@@ -59,7 +59,6 @@ def main():
     max_flow_ek = 0
     ek_time = 1.0
 
-    '''
     # ========== RUN EDMONDS-KARP ==========
     print("\n" + "="*80)
     print("1. EDMONDS-KARP ALGORITHM")
@@ -84,7 +83,7 @@ def main():
     print(f"\nEdmonds-Karp Result:")
     print(f"  Max Flow: {max_flow_ek:,} passengers")
     print(f"  Runtime: {ek_time:.4f} seconds")
-    '''
+
     # ========== RUN DINIC ==========
     print("\n" + "="*80)
     print("2. DINIC'S ALGORITHM")
@@ -119,13 +118,13 @@ def main():
     print("="*80)
     
     print(f"\nResults:")
-    print(f"  Edmonds-Karp: {max_flow_ek:,} passengers in {ek_time:.4f}s")
-    print(f"  Dinic:        {max_flow_dinic:,} passengers in {dinic_time:.4f}s")
+    print(f"Edmonds-Karp: {max_flow_ek:,} passengers in {ek_time:.4f}s")
+    print(f"Dinic:        {max_flow_dinic:,} passengers in {dinic_time:.4f}s")
     
     if max_flow_ek == max_flow_dinic:
-        print(f"  ✓ Both algorithms agree on max flow")
+        print(f"Both algorithms agree on max flow")
     else:
-        print(f"  ⚠️ WARNING: Algorithms disagree!")
+        print(f"WARNING: Algorithms disagree!")
     
     if dinic_time < ek_time:
         speedup = ek_time / dinic_time
@@ -137,9 +136,9 @@ def main():
     print(f"\nComplexity:")
     edges = sum(1 for i in range(graph.size) for j in range(graph.size) if graph.adj_matrix[i][j] > 0)
     nodes = graph.size
-    print(f"  Graph size: V={nodes:,}, E={edges:,}")
-    print(f"  Edmonds-Karp: O(V·E²) ≈ {nodes * edges * edges:,} operations")
-    print(f"  Dinic:        O(V²·E) ≈ {nodes * nodes * edges:,} operations")
+    print(f"Graph size: V={nodes:,}, E={edges:,}")
+    print(f"Edmonds-Karp: O(V·E²) ≈ {nodes * edges * edges:,} operations")
+    print(f"Dinic: O(V²·E) ≈ {nodes * nodes * edges:,} operations")
     
     print("="*80)
 
