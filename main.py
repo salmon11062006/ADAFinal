@@ -20,7 +20,7 @@ def main():
     time_start = '05:00:00'  # Morning peak start
     time_end = '07:00:00'    # Morning peak end
     
-    # Bus capacity
+    # Assumed bus capacity
     bus_capacity = 85  # passengers per bus
     
     # Transfer constraints
