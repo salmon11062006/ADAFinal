@@ -17,7 +17,7 @@ def main():
     # ========== CONFIGURE PARAMETERS HERE ==========
     
     # Time window for analysis
-    time_start = '05:00:00'  # Morning peak start
+    time_start = '06:00:00'  # Morning peak start
     time_end = '07:00:00'    # Morning peak end
     
     # Assumed bus capacity
