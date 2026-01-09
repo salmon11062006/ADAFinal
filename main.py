@@ -16,10 +16,6 @@ def main():
     
     # ========== CONFIGURE PARAMETERS HERE ==========
     
-    # Time window for analysis
-    time_start = '06:00:00'  # Morning peak start
-    time_end = '07:00:00'    # Morning peak end
-    
     # Assumed bus capacity
     bus_capacity = 85  # passengers per bus
     
@@ -27,9 +23,18 @@ def main():
     min_transfer_time = 120   # Minimum 2 minutes to transfer (120 seconds)
     max_transfer_time = 1800  # Maximum 30 minutes wait (1800 seconds)
     
+    dict_of_routes = {'Pasar Senen ~ Monumen Nasional': ['G00106', 'P00017'], 'Kali Besar ~ Mangga Dua':['G00060', 'G00575'], 
+                      'Bidara Cina ~ Makasar':['G00352', 'G00002']}
+
+    # Time window for analysis
+    time_start = '16:00:00'  
+    time_end = '18:00:00'  
+     
     # Source and destination stops
-    source_stop_id = 'G00359' 
-    dest_stop_id = 'G00042' 
+    route_name = 'Bidara Cina ~ Makasar' # Refer to the keys in the dictionary above, or create your own routes by referring to the GTFS data
+
+    source_stop_id = dict_of_routes[route_name][0]
+    dest_stop_id = dict_of_routes[route_name][1]
 
     # ================================================
     
