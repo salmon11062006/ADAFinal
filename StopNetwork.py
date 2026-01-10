@@ -454,9 +454,13 @@ class StopNetwork:
                     
                     time_diff = to_time_sec - from_time_sec
                     
+                    # Early break: if time difference exceeds max, all subsequent nodes will too
+                    if time_diff > max_transfer_time:
+                        break
+                    
                     # Create transfer edge if different trips and within time window
                     if (from_node['trip_id'] != to_node['trip_id'] and
-                        min_transfer_time <= time_diff <= max_transfer_time):
+                        time_diff >= min_transfer_time):
                         
                         all_edges.append({
                             'from_stop': from_node['stop_id'],

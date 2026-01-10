@@ -1,5 +1,7 @@
 from StopNetwork import StopNetwork
 import time
+import statistics
+import tracemalloc
 
 def main():
     # Initialize bus network
@@ -32,6 +34,9 @@ def main():
      
     # Source and destination stops
     route_name = 'Bidara Cina ~ Makasar' # Refer to the keys in the dictionary above, or create your own routes by referring to the GTFS data
+
+    # Number of runs for averaging
+    num_runs = 5 
 
     source_stop_id = dict_of_routes[route_name][0]
     dest_stop_id = dict_of_routes[route_name][1]
@@ -71,23 +76,63 @@ def main():
     print(f"From: {source_name} ({source_stop_id})")
     print(f"To: {dest_name} ({dest_stop_id})")
     print(f"Time window: {time_start} - {time_end}")
+    print(f"Running {num_runs} times for average...")
     print("="*80 + "\n")
     
     # Deep copy the graph for Edmonds-Karp
     from edmondskarp import Graph as GraphEK
-    graph_ek_copy = GraphEK(graph.size)
-    for i in range(graph.size):
-        for j in range(graph.size):
-            graph_ek_copy.adj_matrix[i][j] = graph.adj_matrix[i][j]
-        graph_ek_copy.vertex_data[i] = graph.vertex_data[i]
     
-    start_time = time.time()
-    max_flow_ek = graph_ek_copy.edmonds_karp(source_idx, sink_idx)
-    ek_time = time.time() - start_time
+    ek_times = []
+    ek_memory = []
+    for run in range(num_runs):
+        print(f"Edmonds-Karp run {run + 1}/{num_runs}...", end=" ", flush=True)
+        
+        # Start memory tracking
+        tracemalloc.start()
+        
+        # Create fresh copy for each run
+        graph_ek_copy = GraphEK(graph.size)
+        for i in range(graph.size):
+            for j in range(graph.size):
+                if graph.adj_matrix[i][j] > 0:
+                    graph_ek_copy.adj_matrix[i][j] = graph.adj_matrix[i][j]
+            graph_ek_copy.vertex_data[i] = graph.vertex_data[i]
+        
+        start_time = time.perf_counter()
+        max_flow_ek = graph_ek_copy.edmonds_karp(source_idx, sink_idx)
+        elapsed = time.perf_counter() - start_time
+        
+        # Get peak memory usage
+        current, peak = tracemalloc.get_traced_memory()
+        ek_memory.append(peak / 1024 / 1024)  # Convert to MB
+        tracemalloc.stop()
+        
+        ek_times.append(elapsed)
+        print(f"{elapsed:.4f}s, {peak / 1024 / 1024:.2f} MB")
     
-    print(f"\nEdmonds-Karp Result:")
+    # Calculate statistics
+    mean_ek_time = statistics.mean(ek_times)
+    median_ek_time = statistics.median(ek_times)
+    stdev_ek_time = statistics.stdev(ek_times) if num_runs > 1 else 0.0
+    min_ek_time = min(ek_times)
+    max_ek_time = max(ek_times)
+    
+    mean_ek_memory = statistics.mean(ek_memory)
+    median_ek_memory = statistics.median(ek_memory)
+    stdev_ek_memory = statistics.stdev(ek_memory) if num_runs > 1 else 0.0
+    min_ek_memory = min(ek_memory)
+    max_ek_memory = max(ek_memory)
+    
+    print(f"\nEdmonds-Karp Results:")
     print(f"  Max Flow: {max_flow_ek:,} passengers")
-    print(f"  Runtime: {ek_time:.4f} seconds")
+    print(f"  Mean Runtime: {mean_ek_time:.4f}s")
+    print(f"  Median Runtime: {median_ek_time:.4f}s")
+    print(f"  Std Dev: {stdev_ek_time:.4f}s")
+    print(f"  Min: {min_ek_time:.4f}s | Max: {max_ek_time:.4f}s")
+    print(f"  Mean Memory: {mean_ek_memory:.2f} MB")
+    print(f"  Median Memory: {median_ek_memory:.2f} MB")
+    print(f"  Std Dev: {stdev_ek_memory:.2f} MB")
+    print(f"  Min: {min_ek_memory:.2f} MB | Max: {max_ek_memory:.2f} MB")
 
     # ========== RUN DINIC ==========
     print("\n" + "="*80)
@@ -96,54 +141,111 @@ def main():
     print(f"From: {source_name} ({source_stop_id})")
     print(f"To: {dest_name} ({dest_stop_id})")
     print(f"Time window: {time_start} - {time_end}")
+    print(f"Running {num_runs} times for average...")
     print("="*80 + "\n")
     
     # Build Dinic graph from adjacency matrix
     from dinic import Graph as GraphDinic
-    graph_dinic = GraphDinic(graph.size)
     
-    # Copy edges from original graph
-    for i in range(graph.size):
-        for j in range(graph.size):
-            if graph.adj_matrix[i][j] > 0:
-                graph_dinic.addEdge(i, j, graph.adj_matrix[i][j])
-        graph_dinic.vertex_data[i] = graph.vertex_data[i]
+    dinic_times = []
+    dinic_memory = []
+    for run in range(num_runs):
+        print(f"Dinic run {run + 1}/{num_runs}...", end=" ", flush=True)
+        
+        # Start memory tracking
+        tracemalloc.start()
+        
+        # Create fresh copy for each run
+        graph_dinic = GraphDinic(graph.size)
+        for i in range(graph.size):
+            for j in range(graph.size):
+                if graph.adj_matrix[i][j] > 0:
+                    graph_dinic.addEdge(i, j, graph.adj_matrix[i][j])
+            graph_dinic.vertex_data[i] = graph.vertex_data[i]
+        
+        start_time = time.perf_counter()
+        max_flow_dinic = graph_dinic.DinicMaxflow(source_idx, sink_idx)
+        elapsed = time.perf_counter() - start_time
+        
+        # Get peak memory usage
+        current, peak = tracemalloc.get_traced_memory()
+        dinic_memory.append(peak / 1024 / 1024)  # Convert to MB
+        tracemalloc.stop()
+        
+        dinic_times.append(elapsed)
+        print(f"{elapsed:.4f}s, {peak / 1024 / 1024:.2f} MB")
     
-    start_time = time.time()
-    max_flow_dinic = graph_dinic.DinicMaxflow(source_idx, sink_idx)
-    dinic_time = time.time() - start_time
+    # Calculate statistics
+    mean_dinic_time = statistics.mean(dinic_times)
+    median_dinic_time = statistics.median(dinic_times)
+    stdev_dinic_time = statistics.stdev(dinic_times) if num_runs > 1 else 0.0
+    min_dinic_time = min(dinic_times)
+    max_dinic_time = max(dinic_times)
     
-    print(f"\nDinic's Result:")
+    mean_dinic_memory = statistics.mean(dinic_memory)
+    median_dinic_memory = statistics.median(dinic_memory)
+    stdev_dinic_memory = statistics.stdev(dinic_memory) if num_runs > 1 else 0.0
+    min_dinic_memory = min(dinic_memory)
+    max_dinic_memory = max(dinic_memory)
+    
+    print(f"\nDinic's Results:")
     print(f"  Max Flow: {max_flow_dinic:,} passengers")
-    print(f"  Runtime: {dinic_time:.4f} seconds")
+    print(f"  Mean Runtime: {mean_dinic_time:.4f}s")
+    print(f"  Median Runtime: {median_dinic_time:.4f}s")
+    print(f"  Std Dev: {stdev_dinic_time:.4f}s")
+    print(f"  Min: {min_dinic_time:.4f}s | Max: {max_dinic_time:.4f}s")
+    print(f"  Mean Memory: {mean_dinic_memory:.2f} MB")
+    print(f"  Median Memory: {median_dinic_memory:.2f} MB")
+    print(f"  Std Dev: {stdev_dinic_memory:.2f} MB")
+    print(f"  Min: {min_dinic_memory:.2f} MB | Max: {max_dinic_memory:.2f} MB")
 
     # ========== COMPARISON ==========
     print("\n" + "="*80)
     print("COMPARISON")
     print("="*80)
     
-    print(f"\nResults:")
-    print(f"Edmonds-Karp: {max_flow_ek:,} passengers in {ek_time:.4f}s")
-    print(f"Dinic:        {max_flow_dinic:,} passengers in {dinic_time:.4f}s")
+    print(f"\nResults (averaged over {num_runs} runs):")
+    print(f"\nTime Performance:")
+    print(f"  Edmonds-Karp: {max_flow_ek:,} passengers in {mean_ek_time:.4f}s (±{stdev_ek_time:.4f}s)")
+    print(f"  Dinic:        {max_flow_dinic:,} passengers in {mean_dinic_time:.4f}s (±{stdev_dinic_time:.4f}s)")
+    
+    print(f"\nSpace Performance:")
+    print(f"  Edmonds-Karp: {mean_ek_memory:.2f} MB (±{stdev_ek_memory:.2f} MB)")
+    print(f"  Dinic:        {mean_dinic_memory:.2f} MB (±{stdev_dinic_memory:.2f} MB)")
     
     if max_flow_ek == max_flow_dinic:
-        print(f"Both algorithms agree on max flow")
+        print(f"\nBoth algorithms agree on max flow")
     else:
-        print(f"WARNING: Algorithms disagree!")
+        print(f"\nWARNING: Algorithms disagree!")
     
-    if dinic_time < ek_time:
-        speedup = ek_time / dinic_time
-        print(f"\n  Dinic is {speedup:.2f}x FASTER than Edmonds-Karp")
+    if mean_dinic_time < mean_ek_time:
+        speedup = mean_ek_time / mean_dinic_time
+        print(f"\n  → Dinic is {speedup:.2f}x FASTER than Edmonds-Karp")
     else:
-        speedup = dinic_time / ek_time
-        print(f"\n  Edmonds-Karp is {speedup:.2f}x FASTER than Dinic")
+        speedup = mean_dinic_time / mean_ek_time
+        print(f"\n  → Edmonds-Karp is {speedup:.2f}x FASTER than Dinic")
     
-    print(f"\nComplexity:")
+    if mean_dinic_memory < mean_ek_memory:
+        mem_ratio = mean_ek_memory / mean_dinic_memory
+        print(f"  → Dinic uses {mem_ratio:.2f}x LESS memory than Edmonds-Karp")
+    else:
+        mem_ratio = mean_dinic_memory / mean_ek_memory
+        print(f"  → Edmonds-Karp uses {mem_ratio:.2f}x LESS memory than Dinic")
+    
+    print(f"\nComplexity Analysis:")
     edges = sum(1 for i in range(graph.size) for j in range(graph.size) if graph.adj_matrix[i][j] > 0)
     nodes = graph.size
     print(f"Graph size: V={nodes:,}, E={edges:,}")
-    print(f"Edmonds-Karp: O(V·E²) ≈ {nodes * edges * edges:,} operations")
-    print(f"Dinic: O(V²·E) ≈ {nodes * nodes * edges:,} operations")
+    print(f"\nTime Complexity:")
+    print(f"  Edmonds-Karp: O(V·E²) ≈ {nodes * edges * edges:,} operations")
+    print(f"  Dinic: O(V²·E) ≈ {nodes * nodes * edges:,} operations")
+    print(f"\nSpace Complexity:")
+    print(f"  Both algorithms use adjacency matrix: O(V²) = {nodes * nodes:,} entries")
+    print(f"  Edmonds-Karp additional: O(V) for BFS queue and parent array")
+    print(f"  Dinic additional: O(V + E) for adjacency list and level array")
+    print(f"\nMeasured Memory:")
+    print(f"  Edmonds-Karp: {mean_ek_memory:.2f} MB")
+    print(f"  Dinic: {mean_dinic_memory:.2f} MB")
     
     print("="*80)
 
