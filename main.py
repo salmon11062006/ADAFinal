@@ -87,9 +87,6 @@ def main():
     for run in range(num_runs):
         print(f"Edmonds-Karp run {run + 1}/{num_runs}...", end=" ", flush=True)
         
-        # Start memory tracking
-        tracemalloc.start()
-        
         # Create fresh copy for each run
         graph_ek_copy = GraphEK(graph.size)
         for i in range(graph.size):
@@ -98,17 +95,20 @@ def main():
                     graph_ek_copy.adj_matrix[i][j] = graph.adj_matrix[i][j]
             graph_ek_copy.vertex_data[i] = graph.vertex_data[i]
         
+        # Start memory tracking AFTER graph creation
+        tracemalloc.start()
+        
         start_time = time.perf_counter()
         max_flow_ek = graph_ek_copy.edmonds_karp(source_idx, sink_idx)
         elapsed = time.perf_counter() - start_time
         
         # Get peak memory usage
         current, peak = tracemalloc.get_traced_memory()
-        ek_memory.append(peak / 1024 / 1024)  # Convert to MB
+        ek_memory.append(peak / 1024)  # Convert to KB
         tracemalloc.stop()
         
         ek_times.append(elapsed)
-        print(f"{elapsed:.4f}s, {peak / 1024 / 1024:.2f} MB")
+        print(f"{elapsed:.4f}s, {peak / 1024:.2f} KB")
     
     # Calculate statistics
     mean_ek_time = statistics.mean(ek_times)
@@ -129,10 +129,10 @@ def main():
     print(f"  Median Runtime: {median_ek_time:.4f}s")
     print(f"  Std Dev: {stdev_ek_time:.4f}s")
     print(f"  Min: {min_ek_time:.4f}s | Max: {max_ek_time:.4f}s")
-    print(f"  Mean Memory: {mean_ek_memory:.2f} MB")
-    print(f"  Median Memory: {median_ek_memory:.2f} MB")
-    print(f"  Std Dev: {stdev_ek_memory:.2f} MB")
-    print(f"  Min: {min_ek_memory:.2f} MB | Max: {max_ek_memory:.2f} MB")
+    print(f"  Mean Memory: {mean_ek_memory:.2f} KB")
+    print(f"  Median Memory: {median_ek_memory:.2f} KB")
+    print(f"  Std Dev: {stdev_ek_memory:.2f} KB")
+    print(f"  Min: {min_ek_memory:.2f} KB | Max: {max_ek_memory:.2f} KB")
 
     # ========== RUN DINIC ==========
     print("\n" + "="*80)
@@ -152,9 +152,6 @@ def main():
     for run in range(num_runs):
         print(f"Dinic run {run + 1}/{num_runs}...", end=" ", flush=True)
         
-        # Start memory tracking
-        tracemalloc.start()
-        
         # Create fresh copy for each run
         graph_dinic = GraphDinic(graph.size)
         for i in range(graph.size):
@@ -163,17 +160,20 @@ def main():
                     graph_dinic.addEdge(i, j, graph.adj_matrix[i][j])
             graph_dinic.vertex_data[i] = graph.vertex_data[i]
         
+        # Start memory tracking AFTER graph creation
+        tracemalloc.start()
+        
         start_time = time.perf_counter()
         max_flow_dinic = graph_dinic.DinicMaxflow(source_idx, sink_idx)
         elapsed = time.perf_counter() - start_time
         
         # Get peak memory usage
         current, peak = tracemalloc.get_traced_memory()
-        dinic_memory.append(peak / 1024 / 1024)  # Convert to MB
+        dinic_memory.append(peak / 1024)  # Convert to KB
         tracemalloc.stop()
         
         dinic_times.append(elapsed)
-        print(f"{elapsed:.4f}s, {peak / 1024 / 1024:.2f} MB")
+        print(f"{elapsed:.4f}s, {peak / 1024:.2f} KB")
     
     # Calculate statistics
     mean_dinic_time = statistics.mean(dinic_times)
@@ -194,10 +194,10 @@ def main():
     print(f"  Median Runtime: {median_dinic_time:.4f}s")
     print(f"  Std Dev: {stdev_dinic_time:.4f}s")
     print(f"  Min: {min_dinic_time:.4f}s | Max: {max_dinic_time:.4f}s")
-    print(f"  Mean Memory: {mean_dinic_memory:.2f} MB")
-    print(f"  Median Memory: {median_dinic_memory:.2f} MB")
-    print(f"  Std Dev: {stdev_dinic_memory:.2f} MB")
-    print(f"  Min: {min_dinic_memory:.2f} MB | Max: {max_dinic_memory:.2f} MB")
+    print(f"  Mean Memory: {mean_dinic_memory:.2f} KB")
+    print(f"  Median Memory: {median_dinic_memory:.2f} KB")
+    print(f"  Std Dev: {stdev_dinic_memory:.2f} KB")
+    print(f"  Min: {min_dinic_memory:.2f} KB | Max: {max_dinic_memory:.2f} KB")
 
     # ========== COMPARISON ==========
     print("\n" + "="*80)
@@ -210,8 +210,8 @@ def main():
     print(f"  Dinic:        {max_flow_dinic:,} passengers in {mean_dinic_time:.4f}s (±{stdev_dinic_time:.4f}s)")
     
     print(f"\nSpace Performance:")
-    print(f"  Edmonds-Karp: {mean_ek_memory:.2f} MB (±{stdev_ek_memory:.2f} MB)")
-    print(f"  Dinic:        {mean_dinic_memory:.2f} MB (±{stdev_dinic_memory:.2f} MB)")
+    print(f"  Edmonds-Karp: {mean_ek_memory:.2f} KB (±{stdev_ek_memory:.2f} KB)")
+    print(f"  Dinic:        {mean_dinic_memory:.2f} KB (±{stdev_dinic_memory:.2f} KB)")
     
     if max_flow_ek == max_flow_dinic:
         print(f"\nBoth algorithms agree on max flow")
@@ -244,8 +244,8 @@ def main():
     print(f"  Edmonds-Karp additional: O(V) for BFS queue and parent array")
     print(f"  Dinic additional: O(V + E) for adjacency list and level array")
     print(f"\nMeasured Memory:")
-    print(f"  Edmonds-Karp: {mean_ek_memory:.2f} MB")
-    print(f"  Dinic: {mean_dinic_memory:.2f} MB")
+    print(f"  Edmonds-Karp: {mean_ek_memory:.2f} KB")
+    print(f"  Dinic: {mean_dinic_memory:.2f} KB")
     
     print("="*80)
 
