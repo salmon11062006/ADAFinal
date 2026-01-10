@@ -15,12 +15,11 @@ class StopNetwork:
         Load GTFS data files.
         
         Args:
-            filter_brt_lines (list): List of BRT line numbers to filter (e.g., [1, 2, 3, ..., 14])
+            filter_brt_lines (list): List of BRT line numbers to filter (1-14)
                                      If None, loads all data.
             save_filtered (bool): If True, saves filtered data to new txt files
             output_suffix (str): Suffix for output filenames (default: 'brt_1-14')
         """
-        print("Loading GTFS data...")
         self.stop_times = pd.read_csv(f'{self.gtfs_path}stop_times.txt')
         self.stops = pd.read_csv(f'{self.gtfs_path}stops.txt')
         self.frequencies = pd.read_csv(f'{self.gtfs_path}frequencies.txt')
@@ -355,7 +354,7 @@ class StopNetwork:
         
         # Get all unique trip_ids from frequencies
         trip_ids = self.frequencies['trip_id'].unique()
-        print(f"Building nodes for {len(trip_ids)} trips...")
+        print(f"Building nodes for {len(trip_ids)} trips")
         
         # Use tqdm for progress bar
         for trip_id in tqdm(trip_ids, desc="Processing trips", unit="trip"):
@@ -397,7 +396,7 @@ class StopNetwork:
         
         # Get all unique trip_ids from frequencies
         trip_ids = self.frequencies['trip_id'].unique()
-        print(f"Building edges for {len(trip_ids)} trips...")
+        print(f"Building edges for {len(trip_ids)} trips")
         
         # STEP 1: Build bus edges
         # Use tqdm for progress bar
@@ -435,7 +434,6 @@ class StopNetwork:
         bus_edge_count = len(all_edges)
         
         # STEP 2: Build transfer edges at same stops
-        print(f"Building transfer edges...")
         nodes_by_stop = {}
         for node in all_nodes:
             stop_id = node['stop_id']
@@ -534,7 +532,7 @@ class StopNetwork:
         """
         from edmondskarp import Graph
         
-        print(f"\nBuilding flow graph from {source_stop} to {dest_stop}...")
+        print(f"\nBuilding flow graph from {source_stop} to {dest_stop}")
         
         # Get all nodes and edges
         nodes = self.build_nodes_all_trips(time_window_start, time_window_end)
@@ -598,11 +596,12 @@ class StopNetwork:
 
 
 if __name__ == "__main__":
+    '''THIS PART IS FOR TESTING THE StopNetwork CLASS (Building the graph and visualizing nodes/edges by refering to tranjakarta GTFS data)'''
     # Example usage - just build the network
     network = StopNetwork(gtfs_path='gtfs/')
     
     # Filter for major BRT lines 1-14
-    brt_lines = list(range(1, 15))  # [1, 2, 3, ..., 14]
+    brt_lines = list(range(1, 15))  # 1 to 14
     file_suffix_name = 'BRT_1-14'  # Change this to customize the output filename
     network.load_data(filter_brt_lines=brt_lines, save_filtered=True, output_suffix=file_suffix_name)
     
