@@ -173,7 +173,9 @@ if __name__ == "__main__":
         'edges': [],
         'times': [],
         'memory': [],
-        'max_flows': []
+        'max_flows': [],
+        'stdev_times': [],
+        'stdev_memory': []
     }
     
     for size in graph_sizes:
@@ -235,6 +237,8 @@ if __name__ == "__main__":
         results['times'].append(avg_time)
         results['memory'].append(avg_memory)
         results['max_flows'].append(max_flow)
+        results['stdev_times'].append(stdev_time)
+        results['stdev_memory'].append(stdev_memory)
         
         print(f"  Vertices: {size}, Edges: ~{edge_count}")
         print(f"  Avg Time: {avg_time:.4f}s (±{stdev_time:.4f}s)")
@@ -243,12 +247,13 @@ if __name__ == "__main__":
     
     # Display results table
     print("\n3. Summary Table:")
-    print("-" * 80)
-    print(f"{'V':<8} {'E':<8} {'Time (s)':<12} {'Memory (KB)':<15} {'Max Flow':<10}")
-    print("-" * 80)
+    print("-" * 110)
+    print(f"{'V':<8} {'E':<8} {'Time (s)':<12} {'Std Dev (s)':<13} {'Memory (KB)':<13} {'Std Dev (KB)':<14} {'Max Flow':<10}")
+    print("-" * 110)
     for i in range(len(results['sizes'])):
         print(f"{results['vertices'][i]:<8} {results['edges'][i]:<8} "
-              f"{results['times'][i]:<12.6f} {results['memory'][i]:<15.2f} "
+              f"{results['times'][i]:<12.6f} {results['stdev_times'][i]:<13.6f} "
+              f"{results['memory'][i]:<13.2f} {results['stdev_memory'][i]:<14.2f} "
               f"{results['max_flows'][i]:<10}")
     
     # Create visualizations
